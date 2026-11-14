@@ -709,6 +709,20 @@
       <div class="ppdb-grid">
 
         <div class="ppdb-copy">
+        <!-- Video background section PPDB (HP/tablet: hanya di blok ini; layar lebar: seluruh section). Lihat src/js/ppdb-video.js -->
+        <div class="ppdb-video-bg" aria-hidden="true">
+          <video class="ppdb-video" muted loop playsinline preload="none" disablepictureinpicture
+                 data-src="asset/video/background.mp4"></video>
+        </div>
+        <button type="button" class="ppdb-sound-btn" id="ppdbSoundBtn" aria-pressed="false" aria-label="Nyalakan suara video">
+          <svg class="icon-muted" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="22" y1="9" x2="16" y2="15"></line><line x1="16" y1="9" x2="22" y2="15"></line>
+          </svg>
+          <svg class="icon-sound" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7"></path><path d="M19 5a10 10 0 0 1 0 14"></path>
+          </svg>
+          <span class="ppdb-sound-label">Suara mati</span>
+        </button>
           <span class="section-eyebrow">PPDB (Tahun Ajaran 2027/2028)</span>
           <h2 class="section-title is-light">Mari bergabung bersama keluarga besar Al Mukhlisin</h2>
           <p class="ppdb-desc">
@@ -981,5 +995,6 @@
 
   <!-- JavaScript Eksternal -->
   <script src="src/js/main.js"></script>
+  <script src="src/js/ppdb-video.js"></script>
 </body>
 </html>

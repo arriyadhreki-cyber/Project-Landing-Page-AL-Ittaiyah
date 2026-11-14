@@ -2326,3 +2326,114 @@ body.is-leaving {
   -webkit-mask-size: 100% 100%;
           mask-size: 100% 100%;
 }
+
+
+/* ==========================================================================
+   VIDEO BACKGROUND - SECTION PPDB
+   Hanya aturan baru; aturan lama tidak diubah.
+   Video: asset/video/background.mp4 (diatur oleh src/js/ppdb-video.js)
+   ========================================================================== */
+/* Layar lebar: .ppdb-copy tidak berposisi, jadi video menempel ke seluruh .ppdb-section.
+   z-index -1 = di belakang konten, di atas background section (lihat isolation di bawah). */
+.ppdb-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ppdb-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+
+.ppdb-video.is-ready { opacity: 1; }
+
+/* Lapisan hijau gelap agar teks & tombol tetap terbaca */
+.ppdb-video-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(11, 54, 43, 0.78) 0%, rgba(9, 46, 37, 0.84) 100%);
+}
+
+/* Pola bintang islami tetap tampil tipis di atas video */
+.ppdb-video-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cdefs%3E%3Cstyle%3E.p%7Bfill:none;stroke:rgba(255,255,255,0.06);stroke-width:1.2;stroke-linejoin:round;%7D.a%7Bfill:none;stroke:rgba(228,181,74,0.07);stroke-width:1.2;%7D%3C/style%3E%3C/defs%3E%3Cpolygon points='60,26 67.07,42.93 84,36 77.07,52.93 94,60 77.07,67.07 84,84 67.07,77.07 60,94 52.93,77.07 36,84 42.93,67.07 26,60 42.93,52.93 36,36 52.93,42.93' class='p'/%3E%3Ccircle cx='60' cy='60' r='12' class='a'/%3E%3Cpolygon points='0,-34 7.07,-17.07 24,-24 17.07,-7.07 34,0 17.07,7.07 24,24 7.07,17.07 0,34 -7.07,17.07 -24,24 -17.07,7.07 -34,0 -17.07,-7.07 -24,-24 -7.07,-17.07' class='p'/%3E%3Cpolygon points='120,-34 127.07,-17.07 144,-24 137.07,-7.07 154,0 137.07,7.07 144,24 127.07,17.07 120,34 112.93,17.07 96,24 102.93,7.07 86,0 102.93,-7.07 96,-24 112.93,-17.07' class='p'/%3E%3Cpolygon points='0,86 7.07,102.93 24,96 17.07,112.93 34,120 17.07,127.07 24,144 7.07,137.07 0,154 -7.07,137.07 -24,144 -17.07,127.07 -34,120 -17.07,112.93 -24,96 -7.07,102.93' class='p'/%3E%3Cpolygon points='120,86 127.07,102.93 144,96 137.07,112.93 154,120 137.07,127.07 144,144 127.07,137.07 120,154 112.93,137.07 96,144 102.93,127.07 86,120 102.93,112.93 96,96 112.93,102.93' class='p'/%3E%3Crect x='51.5' y='0' width='17' height='17' transform='rotate(45 60 8.5)' class='p'/%3E%3Crect x='51.5' y='103' width='17' height='17' transform='rotate(45 60 111.5)' class='p'/%3E%3Crect x='0' y='51.5' width='17' height='17' transform='rotate(45 8.5 60)' class='p'/%3E%3Crect x='103' y='51.5' width='17' height='17' transform='rotate(45 111.5 60)' class='p'/%3E%3Cline x1='60' y1='26' x2='60' y2='0' class='p'/%3E%3Cline x1='60' y1='94' x2='60' y2='120' class='p'/%3E%3Cline x1='26' y1='60' x2='0' y2='60' class='p'/%3E%3Cline x1='94' y1='60' x2='120' y2='60' class='p'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-position: center top;
+  background-size: 120px 120px;
+}
+
+/* Buat .ppdb-section menjadi stacking context sendiri agar video (z-index -1)
+   berada di atas background section tetapi di bawah konten */
+.ppdb-section {
+  isolation: isolate;
+}
+
+/* Tombol suara */
+.ppdb-sound-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(251, 248, 240, 0.35);
+  background: rgba(8, 40, 32, 0.55);
+  color: var(--color-ivory);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.ppdb-sound-btn:hover { background: rgba(8, 40, 32, 0.8); border-color: var(--color-gold); }
+.ppdb-sound-btn:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 2px; }
+.ppdb-sound-btn .icon-sound { display: none; }
+.ppdb-sound-btn.is-on .icon-sound { display: block; }
+.ppdb-sound-btn.is-on .icon-muted { display: none; }
+.ppdb-sound-btn[hidden] { display: none; }
+
+/* HP & tablet (grid 1 kolom): video hanya di blok judul/teks/tombol */
+@media (max-width: 1024px) {
+  .ppdb-copy { position: relative; }
+
+  .ppdb-video-bg {
+    top: -2rem;
+    bottom: -1.5rem;
+    left: -1.5rem;
+    right: -1.5rem;
+    /* tepi atas & bawah memudar halus ke background section */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  }
+
+  .ppdb-sound-btn {
+    top: -2.4rem;
+    right: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ppdb-video-bg { display: none; }
+}
