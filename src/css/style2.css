@@ -1,0 +1,683 @@
+/* ==========================================================================
+   Yayasan Pendidikan Islam Al Mukhlisin - Formulir PPDB
+   File: src/css/style2.css
+   Cocok 1:1 dengan Format Fisik Formulir Pendaftaran Al Mukhlisin
+   ========================================================================== */
+
+:root {
+  --color-primary: #0E4A3A;
+  --color-teal: #00B292;
+  --color-teal-dark: #008f75;
+  --color-gold: #E4B54A;
+  --color-gold-hover: #d2a339;
+  --color-ivory: #FBF8F0;
+  --color-text: #111111;
+  --font-main: 'Plus Jakarta Sans', Arial, -apple-system, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-primary);
+  background-image: 
+    radial-gradient(circle at 50% 10%, rgba(22, 91, 73, 0.45) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cdefs%3E%3Cstyle%3E.p%7Bfill:none;stroke:rgba(255,255,255,0.05);stroke-width:1.2;stroke-linejoin:round;%7D.a%7Bfill:none;stroke:rgba(228,181,74,0.06);stroke-width:1.2;%7D%3C/style%3E%3C/defs%3E%3Cpolygon points='60,26 67.07,42.93 84,36 77.07,52.93 94,60 77.07,67.07 84,84 67.07,77.07 60,94 52.93,77.07 36,84 42.93,67.07 26,60 42.93,52.93 36,36 52.93,42.93' class='p'/%3E%3Ccircle cx='60' cy='60' r='12' class='a'/%3E%3Cpolygon points='0,-34 7.07,-17.07 24,-24 17.07,-7.07 34,0 17.07,7.07 24,24 7.07,17.07 0,34 -7.07,17.07 -24,24 -17.07,7.07 -34,0 -17.07,-7.07 -24,-24 -7.07,-17.07' class='p'/%3E%3Cpolygon points='120,-34 127.07,-17.07 144,-24 137.07,-7.07 154,0 137.07,7.07 144,24 127.07,17.07 120,34 112.93,17.07 96,24 102.93,7.07 86,0 102.93,-7.07 96,-24 112.93,-17.07' class='p'/%3E%3Cpolygon points='0,86 7.07,102.93 24,96 17.07,112.93 34,120 17.07,127.07 24,144 7.07,137.07 0,154 -7.07,137.07 -24,144 -17.07,127.07 -34,120 -17.07,112.93 -24,96 -7.07,102.93' class='p'/%3E%3Cpolygon points='120,86 127.07,102.93 144,96 137.07,112.93 154,120 137.07,127.07 144,144 127.07,137.07 120,154 112.93,137.07 96,144 102.93,127.07 86,120 102.93,112.93 96,96 112.93,102.93' class='p'/%3E%3Crect x='51.5' y='0' width='17' height='17' transform='rotate(45 60 8.5)' class='p'/%3E%3Crect x='51.5' y='103' width='17' height='17' transform='rotate(45 60 111.5)' class='p'/%3E%3Crect x='0' y='51.5' width='17' height='17' transform='rotate(45 8.5 60)' class='p'/%3E%3Crect x='103' y='51.5' width='17' height='17' transform='rotate(45 111.5 60)' class='p'/%3E%3Cline x1='60' y1='26' x2='60' y2='0' class='p'/%3E%3Cline x1='60' y1='94' x2='60' y2='120' class='p'/%3E%3Cline x1='26' y1='60' x2='0' y2='60' class='p'/%3E%3Cline x1='94' y1='60' x2='120' y2='60' class='p'/%3E%3C/svg%3E");
+  background-repeat: no-repeat, repeat;
+  background-position: center, center top;
+  background-size: cover, 120px 120px;
+  color: var(--color-text);
+  min-height: 100vh;
+  padding: 1.5rem 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Top Action Bar (Kembali ke Beranda & Cetak)
+   ========================================================================== */
+.top-action-bar {
+  width: 100%;
+  max-width: 820px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
+}
+
+.btn-nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-ivory);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.55rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+  transition: all 0.2s ease;
+}
+
+.btn-nav-back:hover {
+  background: rgba(228, 181, 74, 0.2);
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  transform: translateX(-2px);
+}
+
+.top-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-print {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-ivory);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.55rem 1.15rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-print:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ==========================================================================
+   Lembaran Kertas Formulir (Printable Paper Sheet)
+   ========================================================================== */
+.paper-form {
+  width: 100%;
+  max-width: 820px;
+  background: #FFFFFF;
+  color: #111111;
+  border-radius: 4px;
+  padding: 2.25rem 2.5rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   KOP FORMULIR
+   ========================================================================== */
+.kop-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding-bottom: 0.65rem;
+  margin-bottom: 0.35rem;
+}
+
+.kop-logo-box {
+  flex-shrink: 0;
+  width: 78px;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kop-logo {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+}
+
+.kop-text-box {
+  flex: 1;
+  text-align: left;
+}
+
+.kop-title-1 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  color: #000000;
+}
+
+.kop-title-2 {
+  font-size: 1.45rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  color: #000000;
+  margin-bottom: 0.15rem;
+}
+
+.kop-address {
+  font-size: 0.775rem;
+  font-weight: 500;
+  color: #111111;
+  line-height: 1.25;
+}
+
+.kop-contact {
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: #111111;
+  line-height: 1.25;
+}
+
+/* Kotak Nomor Pendaftaran */
+.kop-no-box {
+  flex-shrink: 0;
+  width: 125px;
+  border: 1.5px solid #000000;
+  text-align: center;
+}
+
+.kop-no-title {
+  background-color: var(--color-teal);
+  color: #FFFFFF;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 0.25rem 0.25rem;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+}
+
+.kop-no-field {
+  padding: 0.4rem 0.25rem;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+}
+
+.kop-no-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  outline: none;
+  color: #000000;
+}
+
+/* ==========================================================================
+   SECTION BANNER (TEAL BAR)
+   ========================================================================== */
+.section-banner {
+  background-color: var(--color-teal);
+  color: #000000;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 0.22rem 0.65rem;
+  letter-spacing: 0.02em;
+  margin-top: 0.5rem;
+  margin-bottom: 0.45rem;
+  border-radius: 1px;
+}
+
+/* ==========================================================================
+   TABEL BARIS INPUT FORM
+   ========================================================================== */
+.form-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.4rem;
+}
+
+.form-row {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+  font-size: 0.825rem;
+}
+
+.form-num-label {
+  display: flex;
+  width: 215px;
+  flex-shrink: 0;
+  font-weight: 700;
+  color: #000000;
+}
+
+.form-colon {
+  width: 14px;
+  flex-shrink: 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+.form-input-cell {
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+}
+
+/* Garis Input Bergaris Bawah (Underline Input) */
+.line-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #111111;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.825rem;
+  padding: 0.1rem 0.25rem;
+  outline: none;
+  color: #000000;
+}
+
+.line-input:focus {
+  border-bottom: 1.5px solid var(--color-teal);
+  background-color: rgba(0, 178, 146, 0.04);
+}
+
+.line-static {
+  font-weight: 700;
+  padding-left: 0.25rem;
+  color: #000000;
+}
+
+/* Baris Alamat Bertingkat */
+.address-subrows {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.address-subrow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.addr-label {
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 0.825rem;
+  color: #000000;
+}
+
+.line-rtrw {
+  max-width: 140px;
+}
+
+.addr-label-desa {
+  margin-left: 0.75rem;
+}
+
+/* Garis Pemisah Antara Ayah & Ibu (Teal Sesuai Gambar) */
+.parent-divider {
+  border: none;
+  border-top: 1.5px solid var(--color-teal);
+  margin: 0.45rem 0;
+}
+
+/* ==========================================================================
+   PILIHAN JENJANG PENDIDIKAN
+   ========================================================================== */
+.jenjang-checkbox-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3.5rem;
+  padding: 0.45rem 0.5rem 0.55rem;
+  margin-bottom: 0.4rem;
+}
+
+.jenjang-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 0.875rem;
+  user-select: none;
+}
+
+.jenjang-checkbox {
+  display: none;
+}
+
+.teal-square {
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-teal);
+  border: 1.5px solid var(--color-teal);
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.15s ease;
+}
+
+.jenjang-checkbox:checked + .teal-square::after {
+  content: '✔';
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.jenjang-item:hover .teal-square {
+  box-shadow: 0 0 0 2px rgba(0, 178, 146, 0.25);
+}
+
+.jenjang-text {
+  color: #000000;
+}
+
+/* ==========================================================================
+   BAGIAN PERSYARATAN & TANDA TANGAN (BINGKAI TEAL 1:1 DUA KOLOM)
+   ========================================================================== */
+.persyaratan-wrapper {
+  display: grid;
+  grid-template-columns: 1.35fr 0.95fr;
+  border: 2px solid var(--color-teal);
+  margin-top: 0.45rem;
+  margin-bottom: 0.5rem;
+  min-height: 280px;
+}
+
+.persyaratan-list-col {
+  padding: 0.75rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.persyaratan-items-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.syarat-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  gap: 0.75rem;
+}
+
+.syarat-name {
+  color: #000000;
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+/* Pilihan Sudah/belum Interaktif */
+.syarat-status-group {
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  color: #222222;
+}
+
+.status-choice {
+  display: inline-block;
+  padding: 1px 3px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.status-choice.active {
+  background-color: rgba(0, 178, 146, 0.18);
+  color: #007a63;
+  font-weight: 800;
+  border-bottom: 1.5px solid var(--color-teal);
+}
+
+.status-choice:hover {
+  color: var(--color-teal);
+}
+
+.syarat-note {
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: #000000;
+  margin-top: 0.85rem;
+  line-height: 1.35;
+}
+
+/* Kolom Tanda Tangan */
+.signature-col {
+  border-left: 2px solid var(--color-teal);
+  padding: 1.15rem 1rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 0.825rem;
+  justify-content: space-between;
+}
+
+.ttd-header-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ttd-date-row {
+  margin-bottom: 0.45rem;
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.ttd-date-input {
+  border: none;
+  border-bottom: 1px dotted #111111;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.825rem;
+  width: 155px;
+  outline: none;
+  text-align: center;
+  color: #000000;
+}
+
+.ttd-title {
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 0.15rem;
+}
+
+.ttd-role {
+  font-weight: 600;
+  color: #000000;
+}
+
+.ttd-space {
+  flex: 1;
+  min-height: 45px;
+}
+
+.ttd-footer-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ttd-name-input {
+  width: 200px;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-family: inherit;
+  font-size: 0.825rem;
+  font-weight: 600;
+  outline: none;
+  margin-bottom: 0.2rem;
+  color: #000000;
+}
+
+.ttd-line {
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid #000000;
+  margin-bottom: 0.25rem;
+}
+
+.ttd-caption {
+  font-size: 0.725rem;
+  color: #222222;
+}
+
+/* ==========================================================================
+   Tombol Submit / Kirim Formulir Online di Bawah Kertas
+   ========================================================================== */
+.form-footer-actions {
+  width: 100%;
+  max-width: 820px;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-submit-form {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background-color: var(--color-gold);
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 0.9rem 2.5rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-submit-form:hover {
+  background-color: var(--color-gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(228, 181, 74, 0.4);
+}
+
+/* ==========================================================================
+   Gaya Khusus Cetak (@media print)
+   ========================================================================== */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .top-action-bar, .form-footer-actions {
+    display: none !important;
+  }
+  .paper-form {
+    box-shadow: none !important;
+    padding: 0.75cm 1cm !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    border-radius: 0 !important;
+  }
+  .section-banner {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background-color: #00B292 !important;
+    color: #000000 !important;
+  }
+  .kop-no-title {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background-color: #00B292 !important;
+    color: #FFFFFF !important;
+  }
+  .teal-square {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background-color: #00B292 !important;
+    border-color: #00B292 !important;
+  }
+  .persyaratan-wrapper {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    border-color: #00B292 !important;
+  }
+  .signature-col {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    border-left-color: #00B292 !important;
+  }
+  .parent-divider {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    border-top-color: #00B292 !important;
+  }
+  .line-input {
+    border-bottom: 1px solid #000000 !important;
+  }
+}
+
+/* Responsive di Layar Kecil */
+@media (max-width: 768px) {
+  .paper-form {
+    padding: 1.25rem 1rem;
+  }
+  .kop-header {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .kop-text-box {
+    order: 2;
+    width: 100%;
+    text-align: left;
+  }
+  .kop-no-box {
+    order: 3;
+    margin-left: auto;
+  }
+  .form-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+  .form-colon {
+    display: none;
+  }
+  .form-input-cell {
+    width: 100%;
+  }
+  .jenjang-checkbox-row {
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+  .persyaratan-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .signature-col {
+    border-left: none;
+    border-top: 2px solid var(--color-teal);
+    padding-top: 1.5rem;
+  }
+}

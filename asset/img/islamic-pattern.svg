@@ -1,0 +1,26 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <style>
+      .pat-line { fill: none; stroke: rgba(255, 255, 255, 0.05); stroke-width: 1.2; stroke-linejoin: round; }
+      .pat-accent { fill: none; stroke: rgba(228, 181, 74, 0.06); stroke-width: 1.2; stroke-linejoin: round; }
+    </style>
+  </defs>
+  <!-- Center Star -->
+  <polygon points="60,41.6 67.04,43 73.01,46.99 77,52.96 78.4,60 77,67.04 73.01,73.01 67.04,77 60,78.4 52.96,77 46.99,73.01 43,67.04 41.6,60 43,52.96 46.99,46.99 52.96,43" class="pat-line" />
+  <circle cx="60" cy="60" r="12" class="pat-accent" />
+  <!-- Corner Stars -->
+  <polygon points="0,-18.4 7.04,-17 13.01,-13.01 17,-7.04 18.4,0 17,7.04 13.01,13.01 7.04,17 0,18.4 -7.04,17 -13.01,13.01 -17,7.04 -18.4,0 -17,-7.04 -13.01,-13.01 -7.04,-17" class="pat-line" />
+  <polygon points="120,-18.4 127.04,-17 133.01,-13.01 137,-7.04 138.4,0 137,7.04 133.01,13.01 127.04,17 120,18.4 112.96,17 106.99,13.01 103,7.04 101.6,0 103,-7.04 106.99,-13.01 112.96,-17" class="pat-line" />
+  <polygon points="0,101.6 7.04,103 13.01,106.99 17,112.96 18.4,120 17,127.04 13.01,133.01 7.04,137 0,138.4 -7.04,137 -13.01,133.01 -17,127.04 -18.4,120 -17,112.96 -13.01,106.99 -7.04,103" class="pat-line" />
+  <polygon points="120,101.6 127.04,103 133.01,106.99 137,112.96 138.4,120 137,127.04 133.01,133.01 127.04,137 120,138.4 112.96,137 106.99,133.01 103,127.04 101.6,120 103,112.96 106.99,106.99 112.96,103" class="pat-line" />
+  <!-- Connecting Crosses / Octagon links -->
+  <rect x="51.5" y="0" width="17" height="17" transform="rotate(45 60 8.5)" class="pat-line" />
+  <rect x="51.5" y="103" width="17" height="17" transform="rotate(45 60 111.5)" class="pat-line" />
+  <rect x="0" y="51.5" width="17" height="17" transform="rotate(45 8.5 60)" class="pat-line" />
+  <rect x="103" y="51.5" width="17" height="17" transform="rotate(45 111.5 60)" class="pat-line" />
+  <!-- Outer framing lines -->
+  <line x1="60" y1="26" x2="60" y2="0" class="pat-line" />
+  <line x1="60" y1="94" x2="60" y2="120" class="pat-line" />
+  <line x1="26" y1="60" x2="0" y2="60" class="pat-line" />
+  <line x1="94" y1="60" x2="120" y2="60" class="pat-line" />
+</svg>

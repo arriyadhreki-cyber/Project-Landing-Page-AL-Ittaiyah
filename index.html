@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Al Mukhlisin - Yayasan Pendidikan Islam</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="asset/img/logo.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Amiri -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS Eksternal -->
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       NAVBAR (PERSIS SESUAI GAMBAR)
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="navbar-container">
+      
+      <!-- Brand Kiri: Logo dengan Dashed Border Emas + Nama Yayasan -->
+      <a href="index.html" class="brand" aria-label="Yayasan Pendidikan Islam Al Mukhlisin">
+        <div class="logo-frame">
+          <img
+            src="asset/img/logo.png"
+            alt="Logo Al Mukhlisin"
+            class="logo-img"
+            width="36"
+            height="36"
+            onerror="this.onerror=null; this.src='asset/img/logo_clean.png';"
+          >
+        </div>
+        <div class="brand-info">
+          <span class="brand-name">Al Mukhlisin</span>
+          <span class="brand-tagline">Yayasan Pendidikan Islam</span>
+        </div>
+      </a>
+
+      <!-- Menu Navigasi Tengah -->
+      <nav class="nav-wrapper" aria-label="Navigasi Utama">
+        <button
+          class="mobile-menu-btn"
+          type="button"
+          aria-label="Toggle Menu Navigasi"
+          id="menuToggle"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <ul class="nav-list" id="mainMenu">
+          <li><a href="#tentang" class="nav-link">Tentang</a></li>
+          <li><a href="#jenjang" class="nav-link">Jenjang</a></li>
+          <li><a href="#keunggulan" class="nav-link">Keunggulan</a></li>
+          <li><a href="#berita" class="nav-link">Berita</a></li>
+          <li><a href="#kontak" class="nav-link">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <!-- Tombol Aksi Kanan (Daftar PPDB) -->
+      <div class="header-action">
+        <a href="src/page2/pendaftaran.html" class="btn-ppdb">Daftar PPDB</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       HERO SECTION (SELURUH KONTEN DI KIRI, BISMILLAH TETAP DI KIRI)
+       ========================================================================= -->
+  <main class="hero-section">
+    <div class="hero-container">
+      
+      <!-- Kolom Kiri: Rata Kiri Sesuai Desain Asli -->
+      <div class="hero-content">
+        <!-- Bismillah Arab (Kiri) -->
+        <p class="hero-bismillah" dir="rtl" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+        
+        <!-- Badge Selamat Datang (Kiri) -->
+        <div class="hero-badge">
+          <span>SELAMAT DATANG DI YAYASAN PENDIDIKAN ISLAM AL MUKHLISIN</span>
+        </div>
+
+        <!-- Judul Utama (Kiri) -->
+        <h1 class="hero-title">
+          <span class="white-text">Ikhlas Belajar,</span>
+          <span class="gold-text">Tumbuh</span>
+          <span class="gold-text">Berakhlak Mulia</span>
+        </h1>
+
+        <!-- Deskripsi (Kiri) -->
+        <p class="hero-desc">
+          Yayasan Pendidikan Islam Al Mukhlisin mendampingi anak sejak usia dini hingga remaja, lewat tiga jenjang yang memadukan ilmu agama, akademik, dan adab.
+        </p>
+
+        <!-- Tombol Aksi (Kiri) -->
+        <div class="hero-buttons">
+          <a href="src/page2/pendaftaran.html" class="btn-main">
+            <span>Daftar PPDB Online</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#jenjang" class="btn-outline">Kenali Jenjang Kami</a>
+        </div>
+
+        <!-- Indikator Jenjang (Kiri) -->
+        <div class="level-tags">
+          <div class="level-tag">
+            <span class="tag-dot dot-kober"></span>
+            <span>KOBER &amp; RA</span>
+          </div>
+          <div class="level-tag">
+            <span class="tag-dot dot-mdtu"></span>
+            <span>MDTU</span>
+          </div>
+          <div class="level-tag">
+            <span class="tag-dot dot-smp"></span>
+            <span>SMP Islam</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kolom Kanan: Foto Santri & Guru -->
+      <div class="hero-visual">
+        <div class="hero-img-box">
+          <img
+            src="asset/img/Anakanak.png"
+            alt="Santri dan Pengajar Al Mukhlisin"
+            class="hero-img"
+            width="620"
+            height="480"
+            onerror="this.onerror=null; this.src='asset/img/Anakanak_clean.png';"
+          >
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- JavaScript Eksternal -->
+  <script src="src/js/main.js"></script>
+</body>
+</html>

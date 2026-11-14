@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Pendaftaran - Yayasan Pendidikan Islam Al Mukhlisin</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../../asset/img/logo.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- CSS Eksternal (style2.css) -->
+  <link rel="stylesheet" href="../css/style2.css">
+</head>
+<body>
+
+  <!-- Top Action Bar (Navigasi Kembali & Tombol Cetak) -->
+  <div class="top-action-bar">
+    <a href="pendaftaran.html?to=index" class="btn-nav-back">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      <span>Kembali ke Beranda</span>
+    </a>
+
+    <div class="top-right-actions">
+      <button type="button" class="btn-print" onclick="window.print()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        <span>Cetak / Simpan PDF</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Formulir Fisik (Kertas Putih 1:1 Sesuai Format Gambar) -->
+  <form id="ppdbPaperForm" class="paper-form">
+
+    <!-- =======================================================================
+         KOP FORMULIR
+         ======================================================================= -->
+    <header class="kop-header">
+      <!-- Logo Yayasan (Kiri) -->
+      <div class="kop-logo-box">
+        <img
+          src="../../asset/img/logo.png"
+          alt="Logo Yayasan Al Mukhlisin"
+          class="kop-logo"
+          onerror="this.onerror=null; this.src='../../asset/img/logo_clean.png';"
+        >
+      </div>
+
+      <!-- Teks KOP (Rata Kiri di Sebelah Logo Sesuai Gambar) -->
+      <div class="kop-text-box">
+        <h1 class="kop-title-1">YAYASAN PENDIDIKAN ISLAM</h1>
+        <h2 class="kop-title-2">AL MUKHLISIN</h2>
+        <p class="kop-address">Jl.Gg.Kongsi Kp.Lebak Sinyar Rt.03/06 Kel.Cicurug Kec.Cicurug</p>
+        <p class="kop-contact">almukhlisinyaspiam@gmail.com &nbsp;|&nbsp; 089509855898</p>
+      </div>
+
+      <!-- Kotak Nomor Pendaftaran (Kanan) -->
+      <div class="kop-no-box">
+        <div class="kop-no-title">NOMOR<br>PENDAFTARAN</div>
+        <div class="kop-no-field">
+          <input type="text" id="noPendaftaran" name="noPendaftaran" class="kop-no-input" placeholder="Otomatis" value="001/PPDB/2026">
+        </div>
+      </div>
+    </header>
+
+    <!-- =======================================================================
+         A. IDENTITAS SISWA
+         ======================================================================= -->
+    <div class="section-banner">A. IDENTITAS SISWA</div>
+    <div class="form-table">
+      <!-- 1. Nama Lengkap -->
+      <div class="form-row">
+        <div class="form-num-label">1. Nama Lengkap</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="text" id="namaSiswa" name="namaSiswa" class="line-input" required>
+        </div>
+      </div>
+
+      <!-- 2. Tempat dan Tanggal Lahir -->
+      <div class="form-row">
+        <div class="form-num-label">2. Tempat dan Tanggal Lahir</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="text" id="ttlSiswa" name="ttlSiswa" class="line-input" placeholder="Contoh: Sukabumi, 12 Januari 2012" required>
+        </div>
+      </div>
+
+      <!-- 3. Jenis Kelamin -->
+      <div class="form-row">
+        <div class="form-num-label">3. Jenis Kelamin</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="text" id="jkSiswa" name="jkSiswa" class="line-input" placeholder="Laki-laki / Perempuan" required>
+        </div>
+      </div>
+
+      <!-- 4. Agama -->
+      <div class="form-row">
+        <div class="form-num-label">4. Agama</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <span class="line-static">ISLAM</span>
+        </div>
+      </div>
+
+      <!-- 5. NISN -->
+      <div class="form-row">
+        <div class="form-num-label">5. NISN</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="text" id="nisnSiswa" name="nisnSiswa" class="line-input">
+        </div>
+      </div>
+
+      <!-- 6. Anak Ke -->
+      <div class="form-row">
+        <div class="form-num-label">6. Anak Ke</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="text" id="anakKe" name="anakKe" class="line-input">
+        </div>
+      </div>
+
+      <!-- 7. Jumlah Saudara -->
+      <div class="form-row">
+        <div class="form-num-label">7. Jumlah Saudara</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="text" id="jmlSaudara" name="jmlSaudara" class="line-input">
+        </div>
+      </div>
+
+      <!-- 8. Telepon/No Hp -->
+      <div class="form-row">
+        <div class="form-num-label">8. Telepon/No Hp</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="tel" id="telpSiswa" name="telpSiswa" class="line-input" required>
+        </div>
+      </div>
+
+      <!-- 9. Alamat Lengkap -->
+      <div class="form-row" style="align-items: flex-start;">
+        <div class="form-num-label" style="padding-top: 0.15rem;">9. Alamat Lengkap</div>
+        <div class="form-colon" style="padding-top: 0.15rem;">:</div>
+        <div class="form-input-cell">
+          <div class="address-subrows">
+            <div class="address-subrow">
+              <span class="addr-label">Kp/Jln.</span>
+              <input type="text" id="alamatKpJln" name="alamatKpJln" class="line-input" required>
+            </div>
+            <div class="address-subrow">
+              <span class="addr-label">Rt/Rw</span>
+              <input type="text" id="alamatRtRw" name="alamatRtRw" class="line-input line-rtrw">
+              <span class="addr-label addr-label-desa">Desa</span>
+              <input type="text" id="alamatDesa" name="alamatDesa" class="line-input" required>
+            </div>
+            <div class="address-subrow">
+              <span class="addr-label">Kecamatan</span>
+              <input type="text" id="alamatKec" name="alamatKec" class="line-input" required>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         B. ASAL SEKOLAH SD / MI
+         ======================================================================= -->
+    <div class="section-banner">B. ASAL SEKOLAH SD / MI</div>
+    <div class="form-table">
+      <div class="form-row">
+        <div class="form-num-label">1. Nama Sekolah SD / MI</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="text" id="asalSekolahNama" name="asalSekolahNama" class="line-input">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-num-label">2. Alamat Sekolah SD/ MI</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="text" id="asalSekolahAlamat" name="asalSekolahAlamat" class="line-input">
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         C. IDENTITAS ORANGTUA/WALI
+         ======================================================================= -->
+    <div class="section-banner">C. IDENTITAS ORANGTUA/WALI</div>
+    <div class="form-table">
+      <!-- Ayah -->
+      <div class="form-row">
+        <div class="form-num-label">1. Nama Ayah</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="text" id="namaAyah" name="namaAyah" class="line-input" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-num-label">2. Tempat dan Tanggal Lahir</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="text" id="ttlAyah" name="ttlAyah" class="line-input">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-num-label">3. Pendidikan Terakhir</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="text" id="pendidikanAyah" name="pendidikanAyah" class="line-input">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-num-label">4. Pekerjaan</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="text" id="pekerjaanAyah" name="pekerjaanAyah" class="line-input">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-num-label">5. Telepon/No Hp</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="tel" id="telpAyah" name="telpAyah" class="line-input" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-num-label">6. Alamat</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="text" id="alamatAyah" name="alamatAyah" class="line-input">
+        </div>
+      </div>
+
+      <!-- Garis Pemisah Teal Antara Ayah & Ibu Sesuai Gambar -->
+      <hr class="parent-divider">
+
+      <!-- Ibu -->
+      <div class="form-row">
+        <div class="form-num-label">1. Nama Ibu</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="text" id="namaIbu" name="namaIbu" class="line-input" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-num-label">2. Tempat dan Tanggal Lahir</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="text" id="ttlIbu" name="ttlIbu" class="line-input">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-num-label">3. Pendidikan Terakhir</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="text" id="pendidikanIbu" name="pendidikanIbu" class="line-input">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-num-label">4. Pekerjaan</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="text" id="pekerjaanIbu" name="pekerjaanIbu" class="line-input">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-num-label">5. Telepon/No Hp</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="tel" id="telpIbu" name="telpIbu" class="line-input">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-num-label">6. Alamat</div>
+        <div class="form-colon">:</div>
+        <div class="form-input-cell">
+          <input type="text" id="alamatIbu" name="alamatIbu" class="line-input">
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         C. MEMASUKI JENJANG PENDIDIKAN
+         ======================================================================= -->
+    <div class="section-banner">C. MEMASUKI JENJANG PENDIDIKAN</div>
+    <div class="jenjang-checkbox-row">
+      <label class="jenjang-item">
+        <input type="checkbox" name="jenjang[]" value="PAUD" class="jenjang-checkbox">
+        <span class="teal-square"></span>
+        <span class="jenjang-text">PAUD</span>
+      </label>
+      <label class="jenjang-item">
+        <input type="checkbox" name="jenjang[]" value="RA" class="jenjang-checkbox">
+        <span class="teal-square"></span>
+        <span class="jenjang-text">RA</span>
+      </label>
+      <label class="jenjang-item">
+        <input type="checkbox" name="jenjang[]" value="MDT" class="jenjang-checkbox">
+        <span class="teal-square"></span>
+        <span class="jenjang-text">MDT</span>
+      </label>
+      <label class="jenjang-item">
+        <input type="checkbox" name="jenjang[]" value="SMP ISLAM" class="jenjang-checkbox" checked>
+        <span class="teal-square"></span>
+        <span class="jenjang-text">SMP ISLAM</span>
+      </label>
+    </div>
+
+    <!-- =======================================================================
+         D. PERSYARATAN & TANDA TANGAN (BINGKAI TEAL 1:1)
+         ======================================================================= -->
+    <div class="section-banner">D. PERSYARATAN</div>
+    <div class="persyaratan-wrapper">
+      
+      <!-- Kolom Kiri: Daftar Persyaratan Dokumen -->
+      <div class="persyaratan-list-col">
+        <div class="persyaratan-items-box">
+          <div class="syarat-item">
+            <span class="syarat-name">1. Formulir Pendaftaran</span>
+            <div class="syarat-status-group" data-target="syarat_1">
+              <input type="hidden" name="syarat_1" id="syarat_1" value="Sudah">
+              <span class="status-choice active" data-val="Sudah">Sudah</span>/<span class="status-choice" data-val="belum">belum</span>
+            </div>
+          </div>
+          <div class="syarat-item">
+            <span class="syarat-name">2. Photo Copy Ijazah SDN/MI</span>
+            <div class="syarat-status-group" data-target="syarat_2">
+              <input type="hidden" name="syarat_2" id="syarat_2" value="belum">
+              <span class="status-choice" data-val="Sudah">Sudah</span>/<span class="status-choice active" data-val="belum">belum</span>
+            </div>
+          </div>
+          <div class="syarat-item">
+            <span class="syarat-name">3. Photo Copy Ijazah Madrasah Diniyah (MDT)</span>
+            <div class="syarat-status-group" data-target="syarat_3">
+              <input type="hidden" name="syarat_3" id="syarat_3" value="belum">
+              <span class="status-choice" data-val="Sudah">Sudah</span>/<span class="status-choice active" data-val="belum">belum</span>
+            </div>
+          </div>
+          <div class="syarat-item">
+            <span class="syarat-name">4. Photo Copy Kartu Keluarga (KK)</span>
+            <div class="syarat-status-group" data-target="syarat_4">
+              <input type="hidden" name="syarat_4" id="syarat_4" value="belum">
+              <span class="status-choice" data-val="Sudah">Sudah</span>/<span class="status-choice active" data-val="belum">belum</span>
+            </div>
+          </div>
+          <div class="syarat-item">
+            <span class="syarat-name">5. Photo Copy Akte Kelahiran</span>
+            <div class="syarat-status-group" data-target="syarat_5">
+              <input type="hidden" name="syarat_5" id="syarat_5" value="belum">
+              <span class="status-choice" data-val="Sudah">Sudah</span>/<span class="status-choice active" data-val="belum">belum</span>
+            </div>
+          </div>
+          <div class="syarat-item">
+            <span class="syarat-name">6. Photo Copy KTP Orangtua</span>
+            <div class="syarat-status-group" data-target="syarat_6">
+              <input type="hidden" name="syarat_6" id="syarat_6" value="belum">
+              <span class="status-choice" data-val="Sudah">Sudah</span>/<span class="status-choice active" data-val="belum">belum</span>
+            </div>
+          </div>
+          <div class="syarat-item">
+            <span class="syarat-name">7. Surat Keterangan Kelakuan Baik (SKKB)</span>
+            <div class="syarat-status-group" data-target="syarat_7">
+              <input type="hidden" name="syarat_7" id="syarat_7" value="belum">
+              <span class="status-choice" data-val="Sudah">Sudah</span>/<span class="status-choice active" data-val="belum">belum</span>
+            </div>
+          </div>
+          <div class="syarat-item">
+            <span class="syarat-name">8. Photo Copy KIP/KPH <em>(bagi yang punya)</em></span>
+            <div class="syarat-status-group" data-target="syarat_8">
+              <input type="hidden" name="syarat_8" id="syarat_8" value="belum">
+              <span class="status-choice" data-val="Sudah">Sudah</span>/<span class="status-choice active" data-val="belum">belum</span>
+            </div>
+          </div>
+          <div class="syarat-item">
+            <span class="syarat-name">9. Photo Ukuran 2X3 = 2 Lmbr, 3x4 = 2 Lembar</span>
+            <div class="syarat-status-group" data-target="syarat_9">
+              <input type="hidden" name="syarat_9" id="syarat_9" value="belum">
+              <span class="status-choice" data-val="Sudah">Sudah</span>/<span class="status-choice active" data-val="belum">belum</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="syarat-note">
+          **sesuaikan persyaratan nya dengan jenjang<br>pendidikan yang akan dimasuki
+        </p>
+      </div>
+
+      <!-- Kolom Kanan: Pengesahan & Tanda Tangan Orang Tua/Wali -->
+      <div class="signature-col">
+        <div class="ttd-header-group">
+          <div class="ttd-date-row">
+            <span>Sukabumi, </span>
+            <input type="text" id="ttdTanggal" name="ttdTanggal" class="ttd-date-input" placeholder="................................ 2026">
+          </div>
+          <p class="ttd-title">Mengetahui :</p>
+          <p class="ttd-role">Orang Tua/Wali,</p>
+        </div>
+
+        <div class="ttd-space"></div>
+
+        <div class="ttd-footer-group">
+          <input type="text" id="ttdNamaOrtu" name="ttdNamaOrtu" class="ttd-name-input" placeholder="( .................................................... )">
+          <hr class="ttd-line">
+          <span class="ttd-caption">nama &amp; tanda tangan</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Tombol Kirim Formulir Online di Bawah Kertas (Tersembunyi Saat Dicetak) -->
+    <div class="form-footer-actions">
+      <button type="submit" class="btn-submit-form">
+        <span>Simpan &amp; Kirim Pendaftaran</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </button>
+    </div>
+
+  </form>
+
+  <!-- JavaScript Eksternal (page2.js) -->
+  <script src="../js/page2.js"></script>
+</body>
+</html>

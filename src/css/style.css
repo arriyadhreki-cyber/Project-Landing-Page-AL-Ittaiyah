@@ -1,0 +1,482 @@
+/* ==========================================================================
+   Yayasan Pendidikan Islam Al Mukhlisin - Landing Page Stylesheet
+   File: src/css/style.css
+   Color Palette:
+     - Hijau Tua (Primer): #0E4A3A
+     - Emas (Aksen & CTA): #E4B54A
+     - Gading (Latar & Teks): #FBF8F0
+     - Hijau Muda (Panel & Subteks): #E6F0EA
+     - KOBER & RA: #E8923A
+     - MDTU: #2A9D93
+     - SMP Islam: #3B5BC4
+   Typography:
+     - Plus Jakarta Sans (Judul: 800, Tombol: 700, Isi: 400-500)
+     - Amiri (Teks Arab Basmalah)
+   ========================================================================== */
+
+:root {
+  --color-primary: #0E4A3A;
+  --color-primary-dark: #093327;
+  --color-gold: #E4B54A;
+  --color-gold-hover: #d2a339;
+  --color-ivory: #FBF8F0;
+  --color-mint: #E6F0EA;
+  --color-kober: #E8923A;
+  --color-mdtu: #2A9D93;
+  --color-smp: #3B5BC4;
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-arabic: 'Amiri', serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-primary);
+  /* Motif Geometris Islami Bintang 8 (Khatam Tile) */
+  background-image: 
+    radial-gradient(circle at 85% 50%, rgba(22, 91, 73, 0.45) 0%, transparent 60%),
+    radial-gradient(circle at 15% 20%, rgba(20, 80, 64, 0.4) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cdefs%3E%3Cstyle%3E.p%7Bfill:none;stroke:rgba(255,255,255,0.06);stroke-width:1.2;stroke-linejoin:round;%7D.a%7Bfill:none;stroke:rgba(228,181,74,0.07);stroke-width:1.2;%7D%3C/style%3E%3C/defs%3E%3Cpolygon points='60,26 67.07,42.93 84,36 77.07,52.93 94,60 77.07,67.07 84,84 67.07,77.07 60,94 52.93,77.07 36,84 42.93,67.07 26,60 42.93,52.93 36,36 52.93,42.93' class='p'/%3E%3Ccircle cx='60' cy='60' r='12' class='a'/%3E%3Cpolygon points='0,-34 7.07,-17.07 24,-24 17.07,-7.07 34,0 17.07,7.07 24,24 7.07,17.07 0,34 -7.07,17.07 -24,24 -17.07,7.07 -34,0 -17.07,-7.07 -24,-24 -7.07,-17.07' class='p'/%3E%3Cpolygon points='120,-34 127.07,-17.07 144,-24 137.07,-7.07 154,0 137.07,7.07 144,24 127.07,17.07 120,34 112.93,17.07 96,24 102.93,7.07 86,0 102.93,-7.07 96,-24 112.93,-17.07' class='p'/%3E%3Cpolygon points='0,86 7.07,102.93 24,96 17.07,112.93 34,120 17.07,127.07 24,144 7.07,137.07 0,154 -7.07,137.07 -24,144 -17.07,127.07 -34,120 -17.07,112.93 -24,96 -7.07,102.93' class='p'/%3E%3Cpolygon points='120,86 127.07,102.93 144,96 137.07,112.93 154,120 137.07,127.07 144,144 127.07,137.07 120,154 112.93,137.07 96,144 102.93,127.07 86,120 102.93,112.93 96,96 112.93,102.93' class='p'/%3E%3Crect x='51.5' y='0' width='17' height='17' transform='rotate(45 60 8.5)' class='p'/%3E%3Crect x='51.5' y='103' width='17' height='17' transform='rotate(45 60 111.5)' class='p'/%3E%3Crect x='0' y='51.5' width='17' height='17' transform='rotate(45 8.5 60)' class='p'/%3E%3Crect x='103' y='51.5' width='17' height='17' transform='rotate(45 111.5 60)' class='p'/%3E%3Cline x1='60' y1='26' x2='60' y2='0' class='p'/%3E%3Cline x1='60' y1='94' x2='60' y2='120' class='p'/%3E%3Cline x1='26' y1='60' x2='0' y2='60' class='p'/%3E%3Cline x1='94' y1='60' x2='120' y2='60' class='p'/%3E%3C/svg%3E");
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-position: center, center, center top;
+  background-size: cover, cover, 120px 120px;
+  color: var(--color-ivory);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   NAVBAR (PERSIS SESUAI GAMBAR)
+   ========================================================================== */
+.site-header {
+  width: 100%;
+  position: relative;
+  z-index: 100;
+  padding: 1.25rem 0;
+}
+
+.navbar-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* Bagian Kiri: Logo + Aksen Dashed Emas + Teks Yayasan */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-shrink: 0;
+}
+
+.logo-frame {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px dashed var(--color-gold);
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(14, 74, 58, 0.45);
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.brand-tagline {
+  font-size: 0.775rem;
+  font-weight: 500;
+  color: rgba(230, 240, 234, 0.85);
+  line-height: 1.2;
+}
+
+/* Bagian Tengah: Menu Navigasi Bersih */
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: rgba(251, 248, 240, 0.92);
+  transition: color 0.2s ease;
+  padding: 0.35rem 0;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--color-gold);
+}
+
+/* Bagian Kanan: Tombol Pill Daftar PPDB */
+.header-action {
+  flex-shrink: 0;
+}
+
+.btn-ppdb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-gold);
+  color: var(--color-primary);
+  font-size: 0.925rem;
+  font-weight: 700;
+  padding: 0.65rem 1.65rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(228, 181, 74, 0.25);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-ppdb:hover {
+  background-color: var(--color-gold-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(228, 181, 74, 0.35);
+}
+
+.btn-ppdb:active {
+  transform: translateY(0);
+}
+
+/* Tombol Hamburger Khusus Mobile */
+.mobile-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--color-ivory);
+}
+
+/* ==========================================================================
+   HERO SECTION (SELURUH KONTEN DI KIRI, BISMILLAH TETAP DI KIRI)
+   ========================================================================== */
+.hero-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: clamp(1rem, 2.5vh, 2rem) 0 clamp(2rem, 4vh, 3.5rem);
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* Konten Kiri Selalu Rata Kiri */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  z-index: 2;
+}
+
+/* Tulisan Arab Bismillah */
+.hero-bismillah {
+  font-family: var(--font-arabic);
+  font-size: clamp(1.85rem, 2.8vw, 2.35rem);
+  color: var(--color-gold);
+  line-height: 1.3;
+  margin: 0 0 0.85rem 0;
+  text-align: left;
+  display: block;
+  width: fit-content;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Badge Selamat Datang */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(228, 181, 74, 0.12);
+  border: 1px solid rgba(228, 181, 74, 0.32);
+  padding: 0.4rem 1.15rem;
+  border-radius: 9999px;
+  margin-bottom: 1.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  letter-spacing: 0.04em;
+  text-align: left;
+}
+
+/* Judul Utama */
+.hero-title {
+  font-size: clamp(2.4rem, 4.3vw, 3.65rem);
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.35rem;
+  text-align: left;
+}
+
+.hero-title .white-text {
+  color: var(--color-ivory);
+  display: block;
+}
+
+.hero-title .gold-text {
+  color: var(--color-gold);
+  display: block;
+}
+
+/* Paragraf Deskripsi */
+.hero-desc {
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  color: rgba(230, 240, 234, 0.88);
+  line-height: 1.68;
+  max-width: 530px;
+  margin-bottom: 2.25rem;
+  text-align: left;
+}
+
+/* Tombol Aksi */
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.btn-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background-color: var(--color-gold);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.975rem;
+  padding: 0.85rem 1.85rem;
+  border-radius: 9999px;
+  box-shadow: 0 6px 18px rgba(228, 181, 74, 0.28);
+  transition: all 0.2s ease;
+}
+
+.btn-main:hover {
+  background-color: var(--color-gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(228, 181, 74, 0.38);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(251, 248, 240, 0.35);
+  color: var(--color-ivory);
+  font-weight: 600;
+  font-size: 0.975rem;
+  padding: 0.85rem 1.85rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(251, 248, 240, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Indikator Jenjang */
+.level-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.level-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--color-mint);
+}
+
+.tag-dot {
+  width: 7.5px;
+  height: 7.5px;
+  border-radius: 50%;
+}
+
+.dot-kober { background-color: var(--color-kober); box-shadow: 0 0 6px var(--color-kober); }
+.dot-mdtu { background-color: var(--color-mdtu); box-shadow: 0 0 6px var(--color-mdtu); }
+.dot-smp { background-color: var(--color-smp); box-shadow: 0 0 6px var(--color-smp); }
+
+/* Kolom Kanan: Foto Santri & Guru */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-img-box {
+  width: 100%;
+  max-width: 620px;
+  position: relative;
+}
+
+.hero-img-box::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  right: 20%;
+  bottom: 10%;
+  background: radial-gradient(circle, rgba(228, 181, 74, 0.12) 0%, rgba(22, 91, 73, 0.25) 50%, transparent 75%);
+  filter: blur(40px);
+  z-index: -1;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  max-height: 540px;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.35));
+}
+
+/* ==========================================================================
+   Responsive Rules
+   ========================================================================== */
+@media (max-width: 900px) {
+  .navbar-container {
+    padding: 0 1.25rem;
+  }
+  .nav-list {
+    gap: 1.25rem;
+  }
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .hero-visual {
+    order: -1;
+  }
+  .hero-img-box {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: inline-flex;
+  }
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #0B3D30;
+    border: 1px solid rgba(228, 181, 74, 0.3);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    gap: 0.75rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    z-index: 1000;
+  }
+  .nav-list.is-open {
+    display: flex;
+  }
+  .nav-list .nav-link {
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+  }
+  .header-action {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.15rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-main, .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}
