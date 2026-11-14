@@ -2311,3 +2311,18 @@ body.is-leaving {
   .welcome-reveal > * { animation: none !important; opacity: 1 !important; }
   .welcome-reveal::before { animation: none !important; transform: scaleX(0) !important; }
 }
+
+/* ==========================================================================
+   PERBAIKAN: Transisi transparan (fade) bagian bawah foto hero
+   - Menghilangkan tepi bawah foto yang tampak pecah/bergerigi
+   - Foto memudar halus ke transparan (menyatu dengan background hijau)
+   - Hanya menambah aturan baru; kode sebelumnya tidak diubah
+   ========================================================================== */
+.hero-visual .hero-img-box .hero-img {
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 70%, rgba(0, 0, 0, 0) 91%);
+          mask-image: linear-gradient(to bottom, #000 0%, #000 70%, rgba(0, 0, 0, 0) 91%);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+          mask-size: 100% 100%;
+}
