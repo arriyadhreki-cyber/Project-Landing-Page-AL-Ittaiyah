@@ -77,7 +77,7 @@
   <!-- =========================================================================
        HERO SECTION (SELURUH KONTEN DI KIRI, BISMILLAH TETAP DI KIRI)
        ========================================================================= -->
-  <main class="hero-section">
+  <section class="hero-section" id="hero">
     <div class="hero-container">
       
       <!-- Kolom Kiri: Rata Kiri Sesuai Desain Asli -->
@@ -146,6 +146,837 @@
       </div>
 
     </div>
+  </section>
+
+  <!-- ANIMASI SELAMAT DATANG (High-Line Wipe Reveal) -->
+  <div class="welcome-overlay" id="welcomeOverlay" aria-hidden="true">
+    <div class="welcome-pattern" aria-hidden="true"></div>
+    <div class="welcome-inner">
+      <div class="welcome-logo">
+        <span class="welcome-ring" aria-hidden="true"></span>
+        <span class="welcome-ring welcome-ring--outer" aria-hidden="true"></span>
+        <img src="asset/img/logo.png" alt="Logo Al Mukhlisin" class="welcome-logo-img">
+      </div>
+      <div class="welcome-reveal welcome-delay-1">
+        <p class="welcome-bismillah" dir="rtl" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+      </div>
+      <div class="welcome-reveal welcome-delay-2">
+        <span class="welcome-badge">YAYASAN PENDIDIKAN ISLAM</span>
+      </div>
+      <div class="welcome-reveal welcome-delay-3">
+        <h2 class="welcome-title">Selamat Datang</h2>
+        <h2 class="welcome-title">Di Halaman Resmi</h2>
+      </div>
+      <div class="welcome-reveal welcome-delay-4">
+        <p class="welcome-subtitle">Al Mukhlisin</p>
+      </div>
+      <div class="welcome-reveal welcome-delay-5">
+        <button type="button" class="welcome-enter" id="welcomeEnter">Masuk ke Halaman</button>
+      </div>
+      <div class="welcome-progress" aria-hidden="true"><span id="welcomeProgress"></span></div>
+    </div>
+  </div>
+  
+  <main class="site-main">
+  <!-- =========================================================================
+       QUICK ACCESS BAR (TRANSISI DARI HERO KE SECTION TENTANG)
+       ========================================================================= -->
+  <section class="quick-access" aria-label="Akses cepat">
+    <div class="quick-access-inner">
+
+      <a href="src/page2/pendaftaran.html" class="quick-item">
+        <span class="quick-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"></path>
+            <path d="M14 3v6h6"></path><path d="M9 13h7M9 17h5"></path>
+          </svg>
+        </span>
+        <span class="quick-text">
+          <strong>Daftar Online</strong>
+          <small>Isi formulir PPDB</small>
+        </span>
+      </a>
+
+      <a href="src/page2/pendaftaran.html" class="quick-item">
+        <span class="quick-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 4v11"></path><path d="M8 11l4 4 4-4"></path><path d="M5 19h14"></path>
+          </svg>
+        </span>
+        <span class="quick-text">
+          <strong>Unduh Brosur</strong>
+          <small>Program &amp; informasi biaya</small>
+        </span>
+      </a>
+
+      <a href="https://wa.me/6281280174607" target="_blank" rel="noopener" class="quick-item">
+        <span class="quick-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"></path>
+            <path d="M9 9.5c.4 1.9 1.6 3.1 3.5 3.5l.9-1.3 1.9.9-.4 1.5c-2.4.7-5.3-1.9-6.1-4.3l1.6-.4z"></path>
+          </svg>
+        </span>
+        <span class="quick-text">
+          <strong>Chat WhatsApp</strong>
+          <small>Tanya admin langsung</small>
+        </span>
+      </a>
+
+      <a href="#kontak" class="quick-item">
+        <span class="quick-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"></path>
+            <circle cx="12" cy="10" r="2.4"></circle>
+          </svg>
+        </span>
+        <span class="quick-text">
+          <strong>Lokasi Kami</strong>
+          <small>Lihat di peta</small>
+        </span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 2 — TENTANG YAYASAN
+       ========================================================================= -->
+  <section class="about-section" id="tentang">
+    <div class="section-container">
+      <div class="about-grid">
+
+        <!-- Foto Bingkai Mihrab (Kiri) -->
+        <div class="about-media">
+          <figure class="mihrab-frame">
+            <img src="asset/img/gedung.jpg" alt="Gedung dan kegiatan Yayasan Al Mukhlisin" loading="lazy">
+          </figure>
+        </div>
+
+        <!-- Teks (Kanan) -->
+        <div class="about-content">
+          <span class="section-eyebrow">Tentang Yayasan</span>
+          <h2 class="section-title">Pendidikan yang berangkat dari keikhlasan</h2>
+
+          <p class="about-lead">
+            Al Mukhlisin berarti orang-orang yang ikhlas. Semangat itu menjadi dasar setiap kegiatan
+            belajar kami, dari ruang bermain anak usia dini hingga kelas remaja.
+          </p>
+          <p class="about-text">
+            Yayasan ini berdiri pada tahun 1991 oleh para pendiri dan latar belakang. Dua sampai
+            tiga kalimat yang menjelaskan genesis berdirinya yayasan dan semangat yang melatarbelakanginya.
+          </p>
+
+          <!-- Nilai Inti -->
+          <ul class="value-list">
+            <li>Ikhlas</li>
+            <li>Adab</li>
+            <li>Ilmu</li>
+            <li>Amanah</li>
+          </ul>
+
+          <!-- Visi -->
+          <div class="vision-card">
+            <span class="card-label">Visi</span>
+            <p>
+              Terwujudnya Generasi Rabbani yang Beriman, Bertakwa, Berilmu, dan Berakhlakul Karimah
+              Berlandaskan Al-Qur'an dan Ahli Sunnah Wal Jama'ah.
+            </p>
+          </div>
+
+          <!-- Misi -->
+          <div class="mission-block">
+            <span class="card-label">Misi</span>
+            <ul class="mission-list">
+              <li>
+                <span class="mission-number">1</span>
+                <p>Menyelenggarakan pendidikan Islam yang berlandaskan Al-Qur'an dan As-Sunnah guna membentuk generasi yang beriman dan bertakwa kepada Allah SWT.</p>
+              </li>
+              <li>
+                <span class="mission-number">2</span>
+                <p>Membina peserta didik agar memiliki akhlakul karimah, berkepribadian Islami, serta mengamalkan nilai-nilai Islam dalam kehidupan sehari-hari.</p>
+              </li>
+              <li>
+                <span class="mission-number">3</span>
+                <p>Mengembangkan potensi generasi muslim yang berilmu, mandiri, berprestasi, dan bermanfaat bagi agama, masyarakat, dan bangsa.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       ANGKA SINGKAT — 4 STATISTIK YAYASAN
+       ========================================================================= -->
+  <section class="stats-section" aria-label="Angka singkat yayasan">
+    <div class="section-container">
+      <div class="stats-card">
+        <div class="stat-item">
+          <span class="stat-number" data-count="20" data-suffix="+">0</span>
+          <span class="stat-label">Tahun berkhidmat</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="500" data-suffix="+">0</span>
+          <span class="stat-label">Peserta didik</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="30" data-suffix="">0</span>
+          <span class="stat-label">Pendidik &amp; tenaga kependidikan</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-count="3" data-suffix="">0</span>
+          <span class="stat-label">Jenjang pendidikan</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 3 — TIGA JENJANG PENDIDIKAN
+       ========================================================================= -->
+  <section class="jenjang-section" id="jenjang">
+    <div class="section-container">
+
+      <header class="section-head is-centered">
+        <span class="section-eyebrow">Jenjang Pendidikan</span>
+        <h2 class="section-title">Tiga jenjang, satu keluarga besar Al Mukhlisin</h2>
+        <p class="section-desc">
+          Pilih jenjang yang sesuai dengan usia dan kebutuhan putra-putri Anda.
+        </p>
+      </header>
+
+      <div class="jenjang-grid">
+
+        <!-- KOBER & RA -->
+        <article class="jenjang-card is-kober" id="kober-ra">
+          <div class="jenjang-visual">
+            <span class="jenjang-tag">Usia Dini</span>
+            <img src="asset/img/jenjang-kober.jpg" alt="Kegiatan anak usia dini KOBER &amp; RA" loading="lazy">
+          </div>
+          <div class="jenjang-body">
+            <h3 class="jenjang-name">KOBER &amp; RA</h3>
+            <p class="jenjang-subtitle">Kelompok Bermain &amp; Raudhatul Athfal</p>
+            <p class="jenjang-desc">
+              Fondasi iman dan karakter anak usia dini lewat bermain, bercerita, dan pembiasaan
+              ibadah yang menyenangkan.
+            </p>
+            <ul class="feature-list">
+              <li>Bermain sambil belajar</li>
+              <li>Pengenalan huruf hijaiyah &amp; doa harian</li>
+              <li>Pembiasaan adab sehari-hari</li>
+            </ul>
+            <div class="jenjang-meta">
+              <span class="meta-pill">Usia: 3-6 Tahun</span>
+              <span class="meta-pill">Jam: 07.30 - 10.30</span>
+            </div>
+            <div class="jenjang-actions">
+              <a href="#kontak" class="btn-sm-primary">Selengkapnya</a>
+              <a href="src/page2/pendaftaran.html" class="link-arrow">Daftar <span>&rarr;</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- MDTU -->
+        <article class="jenjang-card is-mdtu" id="mdtu">
+          <div class="jenjang-visual">
+            <span class="jenjang-tag">Diniyah</span>
+            <img src="asset/img/jenjang-mdtu.jpg" alt="Kegiatan madrasah diniyah MDTU" loading="lazy">
+          </div>
+          <div class="jenjang-body">
+            <h3 class="jenjang-name">MDTU</h3>
+            <p class="jenjang-subtitle">Madrasah Diniyah Takmiliyah</p>
+            <p class="jenjang-desc">
+              Pendalaman ilmu agama di luar jam sekolah umum: Al-Qur'an, akidah akhlak, fikih,
+              dan bahasa Arab dasar.
+            </p>
+            <ul class="feature-list">
+              <li>Tahsin &amp; tilawah Al-Qur'an</li>
+              <li>Akidah, akhlak &amp; fikih ibadah</li>
+              <li>Hafalan doa &amp; surat pendek</li>
+            </ul>
+            <div class="jenjang-meta">
+              <span class="meta-pill">Usia: 7-12 Tahun</span>
+              <span class="meta-pill">Jam: 13.00 - 16.00</span>
+            </div>
+            <div class="jenjang-actions">
+              <a href="#kontak" class="btn-sm-primary">Selengkapnya</a>
+              <a href="src/page2/pendaftaran.html" class="link-arrow">Daftar <span>&rarr;</span></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- SMP ISLAM -->
+        <article class="jenjang-card is-smp" id="smp-islam">
+          <div class="jenjang-visual">
+            <span class="jenjang-tag">Menengah Pertama</span>
+            <img src="asset/img/jenjang-smp.jpg" alt="Kegiatan belajar SMP Islam" loading="lazy">
+          </div>
+          <div class="jenjang-body">
+            <h3 class="jenjang-name">SMP Islam</h3>
+            <p class="jenjang-subtitle">Sekolah Menengah Pertama Islam</p>
+            <p class="jenjang-desc">
+              Pendidikan menengah pertama yang memadukan kurikulum nasional dengan pembinaan
+              tahfidz, ibadah, dan karakter.
+            </p>
+            <ul class="feature-list">
+              <li>Kurikulum nasional + penguatan agama</li>
+              <li>Program tahfidz &amp; kajian rutin</li>
+              <li>Ekstrakurikuler &amp; pengembangan bakat</li>
+            </ul>
+            <div class="jenjang-meta">
+              <span class="meta-pill">Kelas: VII - IX</span>
+              <span class="meta-pill">Jam: 07.00 - 12.30</span>
+            </div>
+            <div class="jenjang-actions">
+              <a href="#kontak" class="btn-sm-primary">Selengkapnya</a>
+              <a href="src/page2/pendaftaran.html" class="link-arrow">Daftar <span>&rarr;</span></a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 4 — KEUNGGULAN & FASILITAS
+       ========================================================================= -->
+  <section class="advantage-section" id="keunggulan">
+    <div class="section-container">
+
+      <header class="section-head is-split">
+        <div class="section-head-text">
+          <span class="section-eyebrow">Keunggulan</span>
+          <h2 class="section-title">Mengapa orang tua memilih Al Mukhlisin</h2>
+        </div>
+        <p class="section-desc">
+          Enam hal yang kami jaga di semua jenjang, agar anak tumbuh cerdas, mandiri, dan beradab.
+        </p>
+      </header>
+
+      <div class="advantage-grid">
+
+        <article class="advantage-card is-featured">
+          <span class="advantage-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v14H6.5A2.5 2.5 0 0 0 4 19.5z"></path>
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H19v4H6.5"></path>
+              <path d="M9 7.5h6M9 11h4"></path>
+            </svg>
+          </span>
+          <h3>Tahfidz Al-Qur'an</h3>
+          <p>Pembinaan hafalan dan tilawah bertahap sesuai kemampuan setiap anak.</p>
+        </article>
+
+        <article class="advantage-card">
+          <span class="advantage-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v14H6.5A2.5 2.5 0 0 0 4 19.5z"></path>
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H19v4H6.5"></path>
+            </svg>
+          </span>
+          <h3>Kurikulum Terpadu</h3>
+          <p>Pelajaran umum dan pendidikan agama berjalan dalam satu ekosistem belajar.</p>
+        </article>
+
+        <article class="advantage-card">
+          <span class="advantage-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="8"></circle><path d="M12 7.5V12l3 2"></path>
+            </svg>
+          </span>
+          <h3>Pembiasaan Ibadah</h3>
+          <p>Shalat berjamaah, dzikir, dan adab harian menjadi budaya sekolah.</p>
+        </article>
+
+        <article class="advantage-card">
+          <span class="advantage-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 4.5 14.3 9l4.9.7-3.6 3.5.9 4.9L12 15.7 7.5 18.1l.9-4.9L4.8 9.7 9.7 9z"></path>
+            </svg>
+          </span>
+          <h3>Pendidik Pendamping</h3>
+          <p>Guru membimbing dengan keteladanan dan berkomunikasi aktif dengan wali murid.</p>
+        </article>
+
+        <article class="advantage-card">
+          <span class="advantage-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6z"></path>
+              <path d="M9 12l2 2 4-4"></path>
+            </svg>
+          </span>
+          <h3>Lingkungan Aman &amp; Nyaman</h3>
+          <p>Suasana belajar yang ramah anak, terjaga, dan menenangkan.</p>
+        </article>
+
+        <article class="advantage-card">
+          <span class="advantage-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="8.5"></circle>
+              <path d="M12 7.5 13.9 11l3.6.5-2.6 2.5.6 3.6L12 16l-3.5 1.6.6-3.6L6.5 11.5 10.1 11z"></path>
+            </svg>
+          </span>
+          <h3>Ekstrakurikuler</h3>
+          <p>Wadah mengembangkan bakat: seni islami, olahraga, sains, dan kepramukaan.</p>
+        </article>
+
+      </div>
+
+      <!-- Galeri Fasilitas -->
+      <div class="gallery-head">
+        <h3 class="gallery-title">Fasilitas &amp; suasana belajar</h3>
+        <a href="#keunggulan" class="link-arrow">Lihat galeri lengkap <span>&rarr;</span></a>
+      </div>
+
+      <div class="gallery-grid" id="fasilitas">
+        <figure class="gallery-item" data-src="asset/img/fasilitas-kelas.jpg" data-caption="Ruang Kelas">
+          <img src="asset/img/kelas.jpg" alt="Ruang kelas Al Mukhlisin" loading="lazy">
+          <figcaption class="photo-tag">Ruang Kelas</figcaption>
+        </figure>
+        <figure class="gallery-item" data-src="asset/img/fasilitas-lab.jpg" data-caption="LAB Komputer">
+          <img src="asset/img/lab.jpg" alt="Laboratorium komputer" loading="lazy">
+          <figcaption class="photo-tag">LAB Komputer</figcaption>
+        </figure>
+        <figure class="gallery-item" data-src="asset/img/perlombaan.jpg" data-caption="Aktif Mengikuti perlombaan">
+          <img src="asset/img/perlombaan.jpg" alt="Santri aktif mengikuti perlombaan" loading="lazy">
+          <figcaption class="photo-tag">Aktif Mengikuti perlombaan</figcaption>
+        </figure>
+        <figure class="gallery-item" data-src="asset/img/lapangan.jpg" data-caption="Area Bermain &amp; Lapangan">
+          <img src="asset/img/lapangan.jpg" alt="Area bermain dan lapangan" loading="lazy">
+          <figcaption class="photo-tag">Area Bermain &amp; Lapangan</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 5 — BERITA, AGENDA & TESTIMONI
+       ========================================================================= -->
+  <section class="news-section" id="berita">
+    <div class="section-container">
+
+      <header class="section-head is-split">
+        <div class="section-head-text">
+          <span class="section-eyebrow">Berita &amp; Agenda</span>
+          <h2 class="section-title">Kabar terbaru dari Al Mukhlisin</h2>
+        </div>
+        <a href="#berita" class="link-arrow">Lihat semua berita <span>&rarr;</span></a>
+      </header>
+
+      <div class="news-layout">
+
+        <!-- Kolom Berita -->
+        <div class="news-main">
+          <div class="filter-bar" role="tablist" aria-label="Filter berita per jenjang">
+            <button type="button" class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">Semua</button>
+            <button type="button" class="filter-btn" data-filter="kober" role="tab" aria-selected="false">KOBER &amp; RA</button>
+            <button type="button" class="filter-btn" data-filter="mdtu" role="tab" aria-selected="false">MDTU</button>
+            <button type="button" class="filter-btn" data-filter="smp" role="tab" aria-selected="false">SMP Islam</button>
+          </div>
+
+          <div class="news-grid" id="newsGrid">
+
+            <article class="news-card" data-jenjang="smp">
+              <div class="news-media">
+                <img src="asset/img/berita-1.jpg" alt="Persiapan TKA dan USP jenjang SMP" loading="lazy">
+              </div>
+              <div class="news-body">
+                <div class="news-meta">
+                  <span class="news-tag is-smp">SMP Islam</span>
+                  <span>Januari 2027</span>
+                </div>
+                <h3>Persiapan Menjelang TKA &amp; USP tingkat SMP/MTS</h3>
+                <a href="#berita" class="link-arrow">Baca selengkapnya <span>&rarr;</span></a>
+              </div>
+            </article>
+
+            <article class="news-card" data-jenjang="kober">
+              <div class="news-media">
+                <img src="asset/img/berita-2.jpg" alt="Kegiatan Pra Siaga" loading="lazy">
+              </div>
+              <div class="news-body">
+                <div class="news-meta">
+                  <span class="news-tag is-kober">KOBER &amp; RA</span>
+                  <span>November 2026</span>
+                </div>
+                <h3>Kegiatan Pra Siaga</h3>
+                <a href="#berita" class="link-arrow">Baca selengkapnya <span>&rarr;</span></a>
+              </div>
+            </article>
+
+            <article class="news-card" data-jenjang="mdtu">
+              <div class="news-media">
+                <img src="asset/img/berita-3.jpg" alt="Persiapan Sanlat dan UAMDT kelas 6" loading="lazy">
+              </div>
+              <div class="news-body">
+                <div class="news-meta">
+                  <span class="news-tag is-mdtu">MDTU</span>
+                  <span>Januari &amp; Maret</span>
+                </div>
+                <h3>Persiapan Sanlat &amp; UAMDT kelas 6</h3>
+                <a href="#berita" class="link-arrow">Baca selengkapnya <span>&rarr;</span></a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Agenda Mendatang -->
+        <aside class="agenda-card">
+          <h3 class="agenda-title">
+            <span class="agenda-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3.5" y="5" width="17" height="15.5" rx="2.5"></rect>
+                <path d="M3.5 9.5h17M8 3.5v3M16 3.5v3"></path>
+              </svg>
+            </span>
+            Agenda mendatang
+          </h3>
+
+          <ul class="agenda-list">
+            <li>
+              <span class="agenda-date"><strong>06</strong><small>Jan</small></span>
+              <span class="agenda-info"><strong>Semester Genap</strong><small>Semua Jenjang</small></span>
+            </li>
+            <li>
+              <span class="agenda-date"><strong>15</strong><small>Feb</small></span>
+              <span class="agenda-info"><strong>SANLAT</strong><small>Semua Jenjang</small></span>
+            </li>
+            <li>
+              <span class="agenda-date"><strong>&mdash;</strong><small>Jan/Feb</small></span>
+              <span class="agenda-info"><strong>TKA</strong><small>SMP</small></span>
+            </li>
+            <li>
+              <span class="agenda-date"><strong>&mdash;</strong><small>Mar-Apr</small></span>
+              <span class="agenda-info"><strong>UAM DT/RA</strong><small>Jenjang</small></span>
+            </li>
+          </ul>
+        </aside>
+
+      </div>
+
+      <!-- Testimoni Wali Murid -->
+      <div class="testimoni-block">
+        <header class="section-head is-centered">
+          <span class="section-eyebrow">Testimoni</span>
+          <h2 class="section-title">Kata wali murid</h2>
+        </header>
+
+        <div class="testimoni-grid">
+
+          <figure class="testimoni-card">
+            <span class="quote-mark">&ldquo;</span>
+            <blockquote>Alhamdulillah, anak saya sekarang lebih aktif dan mandiri.</blockquote>
+            <figcaption class="testimoni-person">
+              <span class="person-avatar">MU</span>
+              <span class="person-meta"><strong>Mamah Uwaisi</strong><small>Wali murid KOBER &amp; RA</small></span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimoni-card">
+            <span class="quote-mark">&ldquo;</span>
+            <blockquote>Terimakasih banyak untuk seluruh dewan pengajar atas bimbingannya, kini putri saya lebih rajin dalam menghafalnya.</blockquote>
+            <figcaption class="testimoni-person">
+              <span class="person-avatar">MD</span>
+              <span class="person-meta"><strong>Mamah Dianita</strong><small>Wali murid MDTU</small></span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimoni-card">
+            <span class="quote-mark">&ldquo;</span>
+            <blockquote>Terimakasih banyak atas program-programnya, kini anak saya bisa sekolah dengan tenang dan nyaman.</blockquote>
+            <figcaption class="testimoni-person">
+              <span class="person-avatar">MR</span>
+              <span class="person-meta"><strong>Mamah Rahmat</strong><small>Wali murid SMP Islam</small></span>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 6 — PPDB (PENDAFTARAN PESERTA DIDIK BARU)
+       ========================================================================= -->
+  <section class="ppdb-section" id="ppdb">
+    <div class="section-container">
+      <div class="ppdb-grid">
+
+        <div class="ppdb-copy">
+          <span class="section-eyebrow">PPDB (Tahun Ajaran 2027/2028)</span>
+          <h2 class="section-title is-light">Mari bergabung bersama keluarga besar Al Mukhlisin</h2>
+          <p class="ppdb-desc">
+            Pendaftaran dibuka untuk KOBER &amp; RA, MDTU, dan SMP Islam. Ikuti empat langkah mudah berikut.
+          </p>
+
+          <div class="ppdb-actions">
+            <a href="src/page2/pendaftaran.html" class="btn-main">Daftar Sekarang <span>&rarr;</span></a>
+            <a href="src/page2/pendaftaran.html" class="btn-outline">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 4v11"></path><path d="M8 11l4 4 4-4"></path><path d="M5 19h14"></path>
+              </svg>
+              Unduh Brosur
+            </a>
+          </div>
+
+          <p class="ppdb-deadline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3.5" y="5" width="17" height="15.5" rx="2.5"></rect><path d="M3.5 9.5h17"></path>
+            </svg>
+            Batas pendaftaran: Juli 2027
+          </p>
+        </div>
+
+        <ol class="steps-list">
+          <li class="step-item">
+            <span class="step-number">1</span>
+            <div class="step-text">
+              <h3>Isi formulir online</h3>
+              <p>Lengkapi data calon peserta didik dan wali.</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <span class="step-number">2</span>
+            <div class="step-text">
+              <h3>Unggah berkas</h3>
+              <p>Kartu keluarga, akta kelahiran, dan pas foto.</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <span class="step-number">3</span>
+            <div class="step-text">
+              <h3>Observasi / tes</h3>
+              <p>Penjajakan kemampuan sesuai jenjang yang dipilih.</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <span class="step-number">4</span>
+            <div class="step-text">
+              <h3>Pengumuman &amp; daftar ulang</h3>
+              <p>Hasil diumumkan, lalu lanjutkan daftar ulang.</p>
+            </div>
+          </li>
+        </ol>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 7 — KONTAK
+       ========================================================================= -->
+  <section class="contact-section" id="kontak">
+    <div class="section-container">
+
+      <header class="section-head">
+        <span class="section-eyebrow">Kontak</span>
+        <h2 class="section-title">Hubungi dan kunjungi kami</h2>
+      </header>
+
+      <div class="contact-grid">
+
+        <!-- Info Kontak -->
+        <div class="contact-info">
+          <ul class="contact-list">
+            <li class="contact-item">
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"></path><circle cx="12" cy="10" r="2.4"></circle>
+                </svg>
+              </span>
+              <div class="contact-text">
+                <strong>Alamat</strong>
+                <small>Kp. Lebak Sinyar 03/06 Kel. Cicurug Kec. Cicurug Kab. Sukabumi</small>
+              </div>
+            </li>
+            <li class="contact-item">
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6.5 3.5 9 7l-2 2.5c1.1 2.2 3 4 5.2 5l2.5-2 3.5 2.5-.8 3.3c-.3 1.2-1.5 2-2.7 1.9C8.9 19.3 4.7 15.1 3.8 8.3c-.1-1.2.7-2.4 1.9-2.7z"></path>
+                </svg>
+              </span>
+              <div class="contact-text">
+                <strong>WhatsApp &amp; Telepon</strong>
+                <small><a href="https://wa.me/6281280174607" target="_blank" rel="noopener">0812-8017-4607</a></small>
+              </div>
+            </li>
+            <li class="contact-item">
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="5" width="18" height="14" rx="2.5"></rect><path d="m4 7 8 6 8-6"></path>
+                </svg>
+              </span>
+              <div class="contact-text">
+                <strong>Email</strong>
+                <small><a href="mailto:almukhlisinyaspiam@gmail.com">almukhlisinyaspiam@gmail.com</a></small>
+              </div>
+            </li>
+            <li class="contact-item">
+              <span class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path>
+                </svg>
+              </span>
+              <div class="contact-text">
+                <strong>Jam layanan</strong>
+                <small>Senin - Jumat</small>
+              </div>
+            </li>
+          </ul>
+
+          <div class="social-row">
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="3.8"></circle><circle cx="17" cy="7" r="1.1" fill="currentColor" stroke="none"></circle>
+              </svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect><path d="M10.5 9.5 15 12l-4.5 2.5z" fill="currentColor" stroke="none"></path>
+              </svg>
+            </a>
+            <a href="https://wa.me/6281280174607" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="8.5"></circle><path d="M14.4 8.6h-1.1c-.7 0-1.1.4-1.1 1.1v1.2h2.2l-.3 2.1h-1.9v5"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Formulir Pesan -->
+        <form class="contact-form" id="contactForm" novalidate>
+          <h3 class="form-title">Kirim pesan</h3>
+          <p class="form-hint">Tim kami akan membalas melalui WhatsApp.</p>
+
+          <label class="form-field">
+            <span class="form-label">Nama orang tua / wali</span>
+            <input type="text" name="nama" placeholder="Nama lengkap" required>
+          </label>
+
+          <label class="form-field">
+            <span class="form-label">Nomor WhatsApp</span>
+            <input type="tel" name="wa" placeholder="08xx-xxxx-xxxx" required>
+          </label>
+
+          <label class="form-field">
+            <span class="form-label">Jenjang yang diminati</span>
+            <select name="jenjang" required>
+              <option value="">-- Pilih jenjang --</option>
+              <option value="KOBER &amp; RA">KOBER &amp; RA</option>
+              <option value="MDTU">MDTU</option>
+              <option value="SMP Islam">SMP Islam</option>
+            </select>
+          </label>
+
+          <label class="form-field">
+            <span class="form-label">Pesan</span>
+            <textarea name="pesan" rows="4" placeholder="Tulis pertanyaan Anda..." required></textarea>
+          </label>
+
+          <button type="submit" class="btn-submit">Kirim Pesan <span>&rarr;</span></button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+
+      </div>
+
+      <!-- Peta Lokasi -->
+      <div class="map-wrapper">
+        <iframe
+          title="Peta Lokasi Yayasan Al Mukhlisin"
+          src="https://www.google.com/maps?q=Kp.%20Lebak%20Sinyar%2003%2F06%20Cicurug%20Sukabumi&output=embed"
+          width="100%" height="380" style="border:0" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="map-card">
+          <p>Kp. Lebak Sinyar 03/06, Kel. Cicurug, Kec. Cicurug, Kab. Sukabumi</p>
+          <a class="btn-sm-primary" target="_blank" rel="noopener"
+             href="https://www.google.com/maps/search/?api=1&amp;query=Kp.+Lebak+Sinyar+03%2F06+Cicurug+Sukabumi">Buka di Google Maps &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="section-container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="index.html" class="footer-brand-logo">
+            <img src="asset/img/logo_clean.png" alt="Logo Al Mukhlisin" width="46" height="46">
+            <span class="footer-brand-text">
+              <strong>Al Mukhlisin</strong>
+              <small>Yayasan Pendidikan Islam</small>
+            </span>
+          </a>
+          <p>Ikhlas belajar, tumbuh berakhlak mulia. Mendampingi anak dari usia dini hingga remaja.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Jenjang</h4>
+          <ul>
+            <li><a href="#kober-ra">KOBER &amp; RA</a></li>
+            <li><a href="#mdtu">MDTU</a></li>
+            <li><a href="#smp-islam">SMP Islam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Informasi</h4>
+          <ul>
+            <li><a href="#tentang">Tentang Yayasan</a></li>
+            <li><a href="#berita">Berita &amp; Agenda</a></li>
+            <li><a href="#ppdb">PPDB</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hubungi</h4>
+          <ul>
+            <li><a href="https://wa.me/6281280174607" target="_blank" rel="noopener">0812-8017-4607</a></li>
+            <li><a href="mailto:almukhlisinyaspiam@gmail.com">almukhlisinyaspiam@gmail.com</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Yayasan Pendidikan Islam Al Mukhlisin. Seluruh hak cipta dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Tombol WhatsApp Mengambang -->
+  <a href="https://wa.me/6281280174607?text=Hallo%20Admin%20Al%20Mukhlisin%2C%20saya%20ingin%20bertanya%20tentang%20PPDB."
+     target="_blank" rel="noopener" class="wa-float" id="waFloat" aria-label="Hubungi admin via WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3z" fill="#25D366"></path>
+      <path d="M12 9.5c.5 2.3 2.2 4 4.5 4.5l1.2-1.6 2.3 1.1-.5 1.9c-3 .9-6.6-2.3-7.9-5.4l1.9-.7z" fill="#fff"></path>
+    </svg>
+    <span class="wa-float-label">Chat Admin</span>
+  </a>
+
+  <!-- Tombol Kembali ke Atas -->
+  <button type="button" class="to-top" id="toTop" aria-label="Kembali ke atas">&uarr;</button>
+
+  <!-- Lightbox Galeri -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Pratinjau foto">
+    <button type="button" class="lightbox-close" id="lbClose" aria-label="Tutup">&times;</button>
+    <figure>
+      <img src="" alt="" id="lbImg">
+      <figcaption id="lbCaption"></figcaption>
+    </figure>
+  </div>
+
   </main>
 
   <!-- JavaScript Eksternal -->
