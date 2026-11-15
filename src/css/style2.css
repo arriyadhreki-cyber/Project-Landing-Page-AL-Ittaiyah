@@ -1,18 +1,36 @@
 /* ==========================================================================
    Yayasan Pendidikan Islam Al Mukhlisin - Formulir PPDB
    File: src/css/style2.css
-   Cocok 1:1 dengan Format Fisik Formulir Pendaftaran Al Mukhlisin
+   Desain UI Mengikuti Gambar 1 (Bina Amal Style) dengan Palet Warna Dominan Web
+   dan Inputan Data Sesuai Gambar 2 (Formulir Fisik Al Mukhlisin)
    ========================================================================== */
 
 :root {
-  --color-primary: #0E4A3A;
-  --color-teal: #00B292;
-  --color-teal-dark: #008f75;
-  --color-gold: #E4B54A;
-  --color-gold-hover: #d2a339;
-  --color-ivory: #FBF8F0;
-  --color-text: #111111;
-  --font-main: 'Plus Jakarta Sans', Arial, -apple-system, sans-serif;
+  /* Palet Warna Dominan Web Al Mukhlisin */
+  --color-primary: #0E4A3A;        /* Hijau Tua Primer */
+  --color-primary-dark: #093327;   /* Hijau Tua Pekat */
+  --color-primary-light: #165b49;  /* Hijau Tua Sedang */
+  --color-teal: #2A9D93;           /* Toska / Teal Pengganti Biru Gambar 1 */
+  --color-teal-light: #EBF8F6;     /* Toska Muda / Latar */
+  --color-teal-dark: #1F7A72;      /* Toska Gelap */
+  --color-teal-banner: #00B292;     /* Toska Banner Gambar 2 */
+  --color-gold: #E4B54A;           /* Emas Aksen & Tombol */
+  --color-gold-hover: #D2A339;     /* Emas Gelap Hover */
+  --color-ivory: #FBF8F0;          /* Gading */
+  --color-bg-page: #F3F4F6;        /* Latar Belakang Luar Kartu */
+  --color-border: #D1D5DB;         /* Garis Tepi Input Standar */
+  --color-border-subtle: #E5E7EB;  /* Garis Pemisah Tipis */
+  --color-text-main: #1F2937;      /* Teks Utama Slate-800 */
+  --color-text-label: #374151;     /* Teks Label Slate-700 */
+  --color-text-muted: #6B7280;     /* Teks Sekunder Abu-abu */
+  --color-red-alert: #DC2626;      /* Merah Catatan Wajib */
+
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
 *, *::before, *::after {
@@ -21,346 +39,383 @@
   padding: 0;
 }
 
-body {
+body.bina-body {
   font-family: var(--font-main);
-  background-color: var(--color-primary);
-  background-image: 
-    radial-gradient(circle at 50% 10%, rgba(22, 91, 73, 0.45) 0%, transparent 60%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cdefs%3E%3Cstyle%3E.p%7Bfill:none;stroke:rgba(255,255,255,0.05);stroke-width:1.2;stroke-linejoin:round;%7D.a%7Bfill:none;stroke:rgba(228,181,74,0.06);stroke-width:1.2;%7D%3C/style%3E%3C/defs%3E%3Cpolygon points='60,26 67.07,42.93 84,36 77.07,52.93 94,60 77.07,67.07 84,84 67.07,77.07 60,94 52.93,77.07 36,84 42.93,67.07 26,60 42.93,52.93 36,36 52.93,42.93' class='p'/%3E%3Ccircle cx='60' cy='60' r='12' class='a'/%3E%3Cpolygon points='0,-34 7.07,-17.07 24,-24 17.07,-7.07 34,0 17.07,7.07 24,24 7.07,17.07 0,34 -7.07,17.07 -24,24 -17.07,7.07 -34,0 -17.07,-7.07 -24,-24 -7.07,-17.07' class='p'/%3E%3Cpolygon points='120,-34 127.07,-17.07 144,-24 137.07,-7.07 154,0 137.07,7.07 144,24 127.07,17.07 120,34 112.93,17.07 96,24 102.93,7.07 86,0 102.93,-7.07 96,-24 112.93,-17.07' class='p'/%3E%3Cpolygon points='0,86 7.07,102.93 24,96 17.07,112.93 34,120 17.07,127.07 24,144 7.07,137.07 0,154 -7.07,137.07 -24,144 -17.07,127.07 -34,120 -17.07,112.93 -24,96 -7.07,102.93' class='p'/%3E%3Cpolygon points='120,86 127.07,102.93 144,96 137.07,112.93 154,120 137.07,127.07 144,144 127.07,137.07 120,154 112.93,137.07 96,144 102.93,127.07 86,120 102.93,112.93 96,96 112.93,102.93' class='p'/%3E%3Crect x='51.5' y='0' width='17' height='17' transform='rotate(45 60 8.5)' class='p'/%3E%3Crect x='51.5' y='103' width='17' height='17' transform='rotate(45 60 111.5)' class='p'/%3E%3Crect x='0' y='51.5' width='17' height='17' transform='rotate(45 8.5 60)' class='p'/%3E%3Crect x='103' y='51.5' width='17' height='17' transform='rotate(45 111.5 60)' class='p'/%3E%3Cline x1='60' y1='26' x2='60' y2='0' class='p'/%3E%3Cline x1='60' y1='94' x2='60' y2='120' class='p'/%3E%3Cline x1='26' y1='60' x2='0' y2='60' class='p'/%3E%3Cline x1='94' y1='60' x2='120' y2='60' class='p'/%3E%3C/svg%3E");
-  background-repeat: no-repeat, repeat;
-  background-position: center, center top;
-  background-size: cover, 120px 120px;
-  color: var(--color-text);
+  background-color: var(--color-bg-page);
+  color: var(--color-text-main);
+  line-height: 1.5;
   min-height: 100vh;
-  padding: 1.5rem 1rem 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ==========================================================================
-   Top Action Bar (Kembali ke Beranda & Cetak)
+   1. TOP CURVED HERO BANNER (Persis Gaya Gambar 1 Menggunakan Warna Web)
    ========================================================================== */
-.top-action-bar {
+.bina-hero-banner {
   width: 100%;
-  max-width: 820px;
+  /* Gradien Hijau Tua ke Toska Segar Pengganti Gradien Biru Gambar 1 */
+  background: linear-gradient(135deg, #093327 0%, #0E4A3A 35%, #186f58 70%, #2A9D93 100%);
+  color: #FFFFFF;
+  padding: 1.5rem 1.5rem 4.5rem;
+  position: relative;
+  overflow: hidden;
+  /* Bentuk kurva lengkung cembung di bagian bawah seperti Gambar 1 */
+  border-bottom-left-radius: 50% 50px;
+  border-bottom-right-radius: 50% 50px;
+  box-shadow: 0 8px 24px rgba(14, 74, 58, 0.2);
+}
+
+.bina-banner-nav {
+  max-width: 960px;
+  margin: 0 auto 1.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.25rem;
-  gap: 1rem;
 }
 
-.btn-nav-back {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.12);
-  color: var(--color-ivory);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 0.55rem 1.25rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-decoration: none;
-  backdrop-filter: blur(6px);
-  transition: all 0.2s ease;
-}
-
-.btn-nav-back:hover {
-  background: rgba(228, 181, 74, 0.2);
-  border-color: var(--color-gold);
-  color: var(--color-gold);
-  transform: translateX(-2px);
-}
-
-.top-right-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.btn-print {
+.bina-back-link {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  background: rgba(255, 255, 255, 0.12);
-  color: var(--color-ivory);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 0.55rem 1.15rem;
-  border-radius: 9999px;
-  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
   font-weight: 600;
-  cursor: pointer;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.2s ease;
 }
 
-.btn-print:hover {
-  background: rgba(255, 255, 255, 0.22);
+.bina-back-link:hover {
+  background: rgba(228, 181, 74, 0.25);
+  border-color: var(--color-gold);
+  color: var(--color-gold);
 }
 
-/* ==========================================================================
-   Lembaran Kertas Formulir (Printable Paper Sheet)
-   ========================================================================== */
-.paper-form {
-  width: 100%;
-  max-width: 820px;
-  background: #FFFFFF;
-  color: #111111;
-  border-radius: 4px;
-  padding: 2.25rem 2.5rem;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-  font-size: 0.875rem;
-  line-height: 1.4;
-}
-
-/* ==========================================================================
-   KOP FORMULIR
-   ========================================================================== */
-.kop-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.25rem;
-  padding-bottom: 0.65rem;
-  margin-bottom: 0.35rem;
-}
-
-.kop-logo-box {
-  flex-shrink: 0;
-  width: 78px;
-  height: 78px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.kop-logo {
-  width: 75px;
-  height: 75px;
-  object-fit: contain;
-}
-
-.kop-text-box {
-  flex: 1;
+.bina-banner-content {
+  max-width: 960px;
+  margin: 0 auto;
   text-align: left;
 }
 
-.kop-title-1 {
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  line-height: 1.15;
-  color: #000000;
-}
-
-.kop-title-2 {
-  font-size: 1.45rem;
-  font-weight: 900;
-  letter-spacing: 0.03em;
-  color: #000000;
-  margin-bottom: 0.15rem;
-}
-
-.kop-address {
-  font-size: 0.775rem;
+.bina-tagline {
+  font-size: 0.875rem;
   font-weight: 500;
-  color: #111111;
-  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.01em;
 }
 
-.kop-contact {
-  font-size: 0.775rem;
-  font-weight: 600;
-  color: #111111;
-  line-height: 1.25;
+.bina-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #FFFFFF;
+  margin-bottom: 0.45rem;
+  letter-spacing: -0.01em;
 }
 
-/* Kotak Nomor Pendaftaran */
-.kop-no-box {
-  flex-shrink: 0;
-  width: 125px;
-  border: 1.5px solid #000000;
-  text-align: center;
+.bina-subline {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
 }
 
-.kop-no-title {
+/* ==========================================================================
+   2. MAIN WHITE CARD CONTAINER (Sesuai Layout Gambar 1)
+   ========================================================================== */
+.bina-main-wrapper {
+  max-width: 980px;
+  width: 95%;
+  margin: -2.5rem auto 3.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.bina-card-container {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border-subtle);
+  padding: 2rem 2.5rem;
+}
+
+/* ==========================================================================
+   3. TAB NAVIGASI DI ATAS KARTU (Hanya Form Pendaftaran)
+   ========================================================================== */
+.bina-tabs-nav {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.bina-tab-btn {
   background-color: var(--color-teal);
   color: #FFFFFF;
-  font-size: 0.68rem;
-  font-weight: 800;
-  padding: 0.25rem 0.25rem;
-  line-height: 1.15;
-  letter-spacing: 0.02em;
-}
-
-.kop-no-field {
-  padding: 0.4rem 0.25rem;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #FFFFFF;
-}
-
-.kop-no-input {
-  width: 100%;
-  border: none;
-  background: transparent;
-  text-align: center;
   font-family: inherit;
-  font-size: 0.85rem;
-  font-weight: 700;
-  outline: none;
-  color: #000000;
-}
-
-/* ==========================================================================
-   SECTION BANNER (TEAL BAR)
-   ========================================================================== */
-.section-banner {
-  background-color: var(--color-teal);
-  color: #000000;
-  font-size: 0.85rem;
-  font-weight: 800;
-  padding: 0.22rem 0.65rem;
-  letter-spacing: 0.02em;
-  margin-top: 0.5rem;
-  margin-bottom: 0.45rem;
-  border-radius: 1px;
-}
-
-/* ==========================================================================
-   TABEL BARIS INPUT FORM
-   ========================================================================== */
-.form-table {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  margin-bottom: 0.4rem;
-}
-
-.form-row {
-  display: flex;
-  align-items: baseline;
-  width: 100%;
-  font-size: 0.825rem;
-}
-
-.form-num-label {
-  display: flex;
-  width: 215px;
-  flex-shrink: 0;
-  font-weight: 700;
-  color: #000000;
-}
-
-.form-colon {
-  width: 14px;
-  flex-shrink: 0;
-  font-weight: 700;
-  text-align: center;
-}
-
-.form-input-cell {
-  flex: 1;
-  display: flex;
-  align-items: baseline;
-}
-
-/* Garis Input Bergaris Bawah (Underline Input) */
-.line-input {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid #111111;
-  background: transparent;
-  font-family: inherit;
-  font-size: 0.825rem;
-  padding: 0.1rem 0.25rem;
-  outline: none;
-  color: #000000;
-}
-
-.line-input:focus {
-  border-bottom: 1.5px solid var(--color-teal);
-  background-color: rgba(0, 178, 146, 0.04);
-}
-
-.line-static {
-  font-weight: 700;
-  padding-left: 0.25rem;
-  color: #000000;
-}
-
-/* Baris Alamat Bertingkat */
-.address-subrows {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.address-subrow {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  width: 100%;
-}
-
-.addr-label {
-  font-weight: 700;
-  flex-shrink: 0;
-  font-size: 0.825rem;
-  color: #000000;
-}
-
-.line-rtrw {
-  max-width: 140px;
-}
-
-.addr-label-desa {
-  margin-left: 0.75rem;
-}
-
-/* Garis Pemisah Antara Ayah & Ibu (Teal Sesuai Gambar) */
-.parent-divider {
-  border: none;
-  border-top: 1.5px solid var(--color-teal);
-  margin: 0.45rem 0;
-}
-
-/* ==========================================================================
-   PILIHAN JENJANG PENDIDIKAN
-   ========================================================================== */
-.jenjang-checkbox-row {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 3.5rem;
-  padding: 0.45rem 0.5rem 0.55rem;
-  margin-bottom: 0.4rem;
-}
-
-.jenjang-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  cursor: pointer;
-  font-weight: 800;
   font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(42, 157, 147, 0.25);
   user-select: none;
 }
 
-.jenjang-checkbox {
+.bina-tabs-divider {
+  height: 1.5px;
+  background-color: var(--color-border-subtle);
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.bina-tab-pane {
+  display: block;
+}
+
+/* ==========================================================================
+   4. FORM HEADER (Tanpa Teks Merah)
+   ========================================================================== */
+.bina-form-header {
+  margin-bottom: 1.5rem;
+}
+
+.bina-form-heading {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   5. BANNER SEKSI (A, B, C, D) Sesuai Gambar 2
+   ========================================================================== */
+.bina-section-banner {
+  background-color: var(--color-teal-banner);
+  color: #000000;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 0.35rem 0.75rem;
+  border-radius: 2px;
+  letter-spacing: 0.02em;
+  margin-top: 1.5rem;
+  margin-bottom: 1.15rem;
+}
+
+.bina-sub-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin: 0.75rem 0 0.85rem;
+}
+
+.sub-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-teal);
+}
+
+/* ==========================================================================
+   6. ROW-BY-ROW 3-COLUMN FORM LAYOUT (Sesuai Gambar 1)
+   Format: [ Label ]   :   [ Input Field ]
+   ========================================================================== */
+.bina-form-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.bina-form-row {
+  display: grid;
+  grid-template-columns: 220px 20px 1fr;
+  align-items: center;
+  margin-bottom: 0.95rem;
+}
+
+.bina-form-row.row-top-align {
+  align-items: flex-start;
+}
+
+.bina-form-row.row-top-align .bina-label-col,
+.bina-form-row.row-top-align .bina-colon-col {
+  padding-top: 0.65rem;
+}
+
+.bina-label-col {
+  display: flex;
+  align-items: center;
+}
+
+.bina-label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-label);
+  cursor: pointer;
+}
+
+.bina-colon-col {
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.bina-input-col {
+  width: 100%;
+}
+
+/* Gaya Input Sesuai Gambar 1: Kotak melengkung halus dengan garis abu-abu tipis */
+.bina-input {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.9rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: var(--color-text-main);
+  background-color: #FFFFFF;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bina-input:focus {
+  border-color: var(--color-teal);
+  box-shadow: 0 0 0 3px rgba(42, 157, 147, 0.16);
+}
+
+.bina-input::placeholder {
+  color: #9CA3AF;
+  font-size: 0.85rem;
+}
+
+/* Badge Agama ISLAM */
+.bina-static-badge {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 0.875rem;
+  color: #000000;
+  padding: 0.25rem 0;
+}
+
+/* ==========================================================================
+   7. INPUT KHUSUS: RADIO OPSI, INLINE RT/RW, & QUICK FILL
+   ========================================================================== */
+/* Radio Pilihan Jenis Kelamin Sesuai Gambar 1 */
+.bina-radio-options {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 0.25rem 0;
+}
+
+.bina-radio-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-label);
+}
+
+.bina-radio-circle {
+  accent-color: var(--color-teal);
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+
+/* Baris Kolom Sejajar (Kode Pos, RT, RW, Anak Ke) */
+.bina-inline-fields {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.inline-sublabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-label);
+  white-space: nowrap;
+}
+
+.input-compact {
+  max-width: 90px;
+}
+
+.input-compact-md {
+  max-width: 120px;
+}
+
+.mt-2 {
+  margin-top: 0.65rem;
+}
+
+/* Input dengan tombol bantu Salin */
+.input-with-quick-btn {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.btn-quick-fill {
+  background: var(--color-teal-light);
+  border: 1px solid var(--color-teal);
+  color: var(--color-teal-dark);
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.btn-quick-fill:hover {
+  background: var(--color-teal);
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   8. PILIHAN JENJANG PENDIDIKAN (Gambar 2: Kotak Toska Centang)
+   ========================================================================== */
+.bina-jenjang-grid {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  flex-wrap: wrap;
+  padding: 0.25rem 0;
+}
+
+.bina-check-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.bina-checkbox {
   display: none;
 }
 
-.teal-square {
-  width: 16px;
-  height: 16px;
-  background-color: var(--color-teal);
-  border: 1.5px solid var(--color-teal);
+.custom-teal-box {
+  width: 18px;
+  height: 18px;
+  background-color: var(--color-teal-banner);
+  border: 1.5px solid var(--color-teal-banner);
   border-radius: 2px;
   display: inline-flex;
   align-items: center;
@@ -369,315 +424,596 @@ body {
   transition: all 0.15s ease;
 }
 
-.jenjang-checkbox:checked + .teal-square::after {
+.bina-checkbox:checked + .custom-teal-box::after {
   content: '✔';
   color: #FFFFFF;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 900;
   line-height: 1;
 }
 
-.jenjang-item:hover .teal-square {
-  box-shadow: 0 0 0 2px rgba(0, 178, 146, 0.25);
+.bina-check-item:hover .custom-teal-box {
+  box-shadow: 0 0 0 2px rgba(42, 157, 147, 0.25);
 }
 
-.jenjang-text {
+.check-text {
+  font-size: 0.875rem;
+  font-weight: 800;
   color: #000000;
 }
 
 /* ==========================================================================
-   BAGIAN PERSYARATAN & TANDA TANGAN (BINGKAI TEAL 1:1 DUA KOLOM)
+   9. PERSYARATAN & UPLOAD FILE TANDA TANGAN (Format 2 Kolom Gambar 2)
    ========================================================================== */
-.persyaratan-wrapper {
+.bina-persyaratan-card {
   display: grid;
   grid-template-columns: 1.35fr 0.95fr;
-  border: 2px solid var(--color-teal);
-  margin-top: 0.45rem;
-  margin-bottom: 0.5rem;
-  min-height: 280px;
+  border: 2px solid var(--color-teal-banner);
+  margin-top: 0.65rem;
+  margin-bottom: 1.5rem;
+  background: #FFFFFF;
 }
 
-.persyaratan-list-col {
-  padding: 0.75rem 0.95rem;
+.syarat-left-panel {
+  padding: 0.95rem 1.15rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.persyaratan-items-box {
+.syarat-rows-list {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
 }
 
-.syarat-item {
+.syarat-single-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.8rem;
+  font-size: 0.825rem;
   gap: 0.75rem;
 }
 
-.syarat-name {
+.syarat-title {
   color: #000000;
-  line-height: 1.25;
-  font-weight: 500;
-}
-
-/* Pilihan Sudah/belum Interaktif */
-.syarat-status-group {
-  font-size: 0.8rem;
   font-weight: 600;
-  cursor: pointer;
-  user-select: none;
+  line-height: 1.3;
+}
+
+.syarat-status-group {
+  font-size: 0.825rem;
+  font-weight: 700;
   white-space: nowrap;
-  color: #222222;
+  user-select: none;
 }
 
-.status-choice {
-  display: inline-block;
-  padding: 1px 3px;
+.btn-toggle-status {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: #4B5563;
+  padding: 1px 4px;
   border-radius: 3px;
-  transition: all 0.15s ease;
   cursor: pointer;
+  transition: all 0.15s ease;
 }
 
-.status-choice.active {
-  background-color: rgba(0, 178, 146, 0.18);
+.btn-toggle-status:hover {
+  color: var(--color-teal-dark);
+}
+
+.btn-toggle-status.active {
+  background-color: rgba(42, 157, 147, 0.18);
   color: #007a63;
   font-weight: 800;
-  border-bottom: 1.5px solid var(--color-teal);
+  border-bottom: 2px solid var(--color-teal-banner);
 }
 
-.status-choice:hover {
-  color: var(--color-teal);
+.slash-separator {
+  color: #6B7280;
+  margin: 0 1px;
 }
 
-.syarat-note {
-  font-size: 0.725rem;
+.syarat-note-alert {
+  font-size: 0.75rem;
   font-weight: 700;
   color: #000000;
-  margin-top: 0.85rem;
+  margin-top: 1rem;
   line-height: 1.35;
 }
 
-/* Kolom Tanda Tangan */
-.signature-col {
-  border-left: 2px solid var(--color-teal);
-  padding: 1.15rem 1rem 0.95rem;
+/* Kolom Kanan: Pengesahan & Upload Tanda Tangan */
+.syarat-right-panel {
+  border-left: 2px solid var(--color-teal-banner);
+  padding: 1.25rem 1rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   font-size: 0.825rem;
   justify-content: space-between;
+  background-color: #FAFCFB;
 }
 
-.ttd-header-group {
+.ttd-header-wrap {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.ttd-date-row {
-  margin-bottom: 0.45rem;
-  width: 100%;
+.ttd-place-date {
+  margin-bottom: 0.4rem;
+  font-weight: 600;
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 0.25rem;
+  gap: 0.35rem;
 }
 
-.ttd-date-input {
+.bina-ttd-input-date {
   border: none;
-  border-bottom: 1px dotted #111111;
+  border-bottom: 1px dotted #000000;
   background: transparent;
   font-family: inherit;
   font-size: 0.825rem;
-  width: 155px;
+  width: 160px;
   outline: none;
   text-align: center;
-  color: #000000;
 }
 
-.ttd-title {
+.ttd-label-mengetahui {
   font-weight: 600;
   color: #000000;
   margin-bottom: 0.15rem;
 }
 
-.ttd-role {
+.ttd-label-ortu {
   font-weight: 600;
   color: #000000;
 }
 
-.ttd-space {
-  flex: 1;
-  min-height: 45px;
+/* Area Upload File Tanda Tangan */
+.ttd-upload-box {
+  width: 100%;
+  border: 2px dashed var(--color-teal);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-teal-light);
+  padding: 0.85rem 0.65rem;
+  margin: 0.65rem 0;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
 }
 
-.ttd-footer-group {
-  width: 100%;
+.ttd-upload-box:hover {
+  background-color: #E2F5F2;
+  border-color: var(--color-teal-dark);
+}
+
+.ttd-upload-box.drag-over {
+  background-color: #D1EFEA;
+  border-color: var(--color-primary);
+  transform: scale(1.02);
+}
+
+.ttd-file-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.ttd-upload-label {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
 }
 
-.ttd-name-input {
-  width: 200px;
+.upload-icon-svg {
+  color: var(--color-teal-dark);
+  margin-bottom: 2px;
+}
+
+.upload-main-text {
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.upload-sub-text {
+  font-size: 0.685rem;
+  color: var(--color-text-muted);
+  line-height: 1.3;
+}
+
+/* Box Preview File */
+.ttd-preview-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem;
+}
+
+.ttd-preview-thumb {
+  max-height: 60px;
+  max-width: 160px;
+  object-fit: contain;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: #FFFFFF;
+  padding: 2px;
+}
+
+.ttd-file-name-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-teal-dark);
+  word-break: break-all;
+}
+
+.btn-clear-file {
+  background: #FEE2E2;
+  color: #DC2626;
+  border: 1px solid #FCA5A5;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-clear-file:hover {
+  background: #DC2626;
+  color: #FFFFFF;
+}
+
+.ttd-sign-wrap {
+  width: 100%;
+}
+
+.bina-ttd-input-name {
+  width: 220px;
   border: none;
   background: transparent;
   text-align: center;
   font-family: inherit;
   font-size: 0.825rem;
-  font-weight: 600;
+  font-weight: 700;
   outline: none;
-  margin-bottom: 0.2rem;
   color: #000000;
+  margin-bottom: 0.2rem;
 }
 
-.ttd-line {
-  width: 200px;
-  border: none;
-  border-bottom: 1px solid #000000;
-  margin-bottom: 0.25rem;
+.ttd-line-solid {
+  width: 220px;
+  height: 1px;
+  background-color: #000000;
+  margin: 0 auto 0.25rem;
 }
 
-.ttd-caption {
+.ttd-sub-text {
   font-size: 0.725rem;
-  color: #222222;
+  color: #374151;
 }
 
 /* ==========================================================================
-   Tombol Submit / Kirim Formulir Online di Bawah Kertas
+   10. TOMBOL AKSI UTAMA DI BAWAH KARTU
    ========================================================================== */
-.form-footer-actions {
-  width: 100%;
-  max-width: 820px;
-  margin-top: 1.5rem;
+.bina-form-actions {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border-subtle);
 }
 
-.btn-submit-form {
+.btn-bina-secondary {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  background-color: var(--color-gold);
-  color: var(--color-primary);
-  font-size: 1rem;
-  font-weight: 800;
-  padding: 0.9rem 2.5rem;
-  border-radius: 9999px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  gap: 0.45rem;
+  background: #F3F4F6;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  padding: 0.7rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin-right: auto;
   transition: all 0.2s ease;
 }
 
-.btn-submit-form:hover {
-  background-color: var(--color-gold-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(228, 181, 74, 0.4);
+.btn-bina-secondary:hover {
+  background: #E5E7EB;
+  color: var(--color-text-main);
+}
+
+.btn-bina-print {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #FFFFFF;
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-teal);
+  padding: 0.7rem 1.35rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-bina-print:hover {
+  background: var(--color-teal-light);
+}
+
+.btn-bina-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-gold);
+  border: none;
+  padding: 0.75rem 2.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(14, 74, 58, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-bina-primary:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(14, 74, 58, 0.4);
 }
 
 /* ==========================================================================
-   Gaya Khusus Cetak (@media print)
+   11. MODAL DIALOG POP-UP SUKSES
    ========================================================================== */
-@media print {
-  body {
-    background: #FFFFFF !important;
-    padding: 0 !important;
-    margin: 0 !important;
+.bina-modal-dialog {
+  margin: auto;
+  border: none;
+  background: transparent;
+  padding: 1.5rem;
+  max-width: 480px;
+  width: 90%;
+  outline: none;
+}
+
+.bina-modal-dialog::backdrop {
+  background: rgba(9, 51, 40, 0.65);
+  backdrop-filter: blur(5px);
+}
+
+.bina-modal-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.bina-modal-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--color-teal-light);
+  color: var(--color-teal);
+  font-size: 2rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.bina-modal-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.bina-modal-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.bina-modal-summary {
+  background: #F9FAFB;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  font-size: 0.825rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+}
+
+.bina-modal-summary div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bina-modal-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn-modal-print {
+  flex: 1;
+  background: var(--color-teal);
+  color: #FFFFFF;
+  border: none;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.btn-modal-close {
+  background: #F3F4F6;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   12. RESPONSIVE MOBILE & TABLET
+   ========================================================================== */
+@media (max-width: 768px) {
+  .bina-hero-banner {
+    padding: 1.25rem 1rem 3.5rem;
+    border-bottom-left-radius: 40% 35px;
+    border-bottom-right-radius: 40% 35px;
   }
-  .top-action-bar, .form-footer-actions {
-    display: none !important;
+
+  .bina-title {
+    font-size: 1.5rem;
   }
-  .paper-form {
-    box-shadow: none !important;
-    padding: 0.75cm 1cm !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    border-radius: 0 !important;
+
+  .bina-card-container {
+    padding: 1.25rem 1rem;
   }
-  .section-banner {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-    background-color: #00B292 !important;
-    color: #000000 !important;
+
+  .bina-form-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    margin-bottom: 0.85rem;
   }
-  .kop-no-title {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-    background-color: #00B292 !important;
-    color: #FFFFFF !important;
+
+  .bina-colon-col {
+    display: none;
   }
-  .teal-square {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-    background-color: #00B292 !important;
-    border-color: #00B292 !important;
+
+  .bina-persyaratan-card {
+    grid-template-columns: 1fr;
   }
-  .persyaratan-wrapper {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-    border-color: #00B292 !important;
+
+  .syarat-right-panel {
+    border-left: none;
+    border-top: 2px solid var(--color-teal-banner);
+    padding-top: 1.25rem;
   }
-  .signature-col {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-    border-left-color: #00B292 !important;
+
+  .bina-form-actions {
+    flex-wrap: wrap;
   }
-  .parent-divider {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-    border-top-color: #00B292 !important;
+
+  .btn-bina-secondary {
+    width: 100%;
+    justify-content: center;
+    order: 3;
+    margin-right: 0;
   }
-  .line-input {
-    border-bottom: 1px solid #000000 !important;
+
+  .btn-bina-print {
+    flex: 1;
+    justify-content: center;
+    order: 2;
+  }
+
+  .btn-bina-primary {
+    flex: 1;
+    justify-content: center;
+    order: 1;
   }
 }
 
-/* Responsive di Layar Kecil */
-@media (max-width: 768px) {
-  .paper-form {
-    padding: 1.25rem 1rem;
+/* ==========================================================================
+   13. PRINT STYLES
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 1cm 1.2cm;
   }
-  .kop-header {
-    flex-wrap: wrap;
-    gap: 0.75rem;
+
+  body.bina-body {
+    background: #FFFFFF !important;
+    padding: 0 !important;
   }
-  .kop-text-box {
-    order: 2;
-    width: 100%;
-    text-align: left;
+
+  .bina-hero-banner,
+  .bina-tabs-nav,
+  .bina-tabs-divider,
+  .bina-form-actions,
+  .btn-quick-fill,
+  .bina-modal-dialog,
+  .ttd-upload-label,
+  .btn-clear-file {
+    display: none !important;
   }
-  .kop-no-box {
-    order: 3;
-    margin-left: auto;
+
+  .bina-main-wrapper {
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
-  .form-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.15rem;
+
+  .bina-card-container {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
   }
-  .form-colon {
-    display: none;
+
+  .bina-section-banner {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background-color: var(--color-teal-banner) !important;
+    color: #000000 !important;
   }
-  .form-input-cell {
-    width: 100%;
+
+  .bina-input {
+    border: none !important;
+    border-bottom: 1px solid #000000 !important;
+    border-radius: 0 !important;
+    padding: 0.1rem 0 !important;
+    background: transparent !important;
   }
-  .jenjang-checkbox-row {
-    flex-wrap: wrap;
-    gap: 1.25rem;
+
+  .custom-teal-box {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
-  .persyaratan-wrapper {
-    grid-template-columns: 1fr;
+
+  .bina-persyaratan-card {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    border-color: var(--color-teal-banner) !important;
   }
-  .signature-col {
-    border-left: none;
-    border-top: 2px solid var(--color-teal);
-    padding-top: 1.5rem;
+
+  .syarat-right-panel {
+    border-left-color: var(--color-teal-banner) !important;
+  }
+
+  .ttd-upload-box {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+  }
+
+  .ttd-preview-thumb {
+    border: none !important;
+    max-height: 50px !important;
   }
 }
